@@ -1,0 +1,109 @@
+/* ======== hero section ======= */
+/* ============================= */
+.section--bg{
+  position: relative;
+  min-height: 50vh;
+  background: url(../images/services/creme-bg.png) no-repeat center/cover;
+  box-shadow: var(--shadow-xl);
+}
+.section--bg::before{
+  content: '';
+  position: absolute;
+  display: block;
+  inset: 0;
+  /* background: linear-gradient(135deg, rgba(255, 248, 235, 0.6), rgba(220, 200, 180, 0.4)); */
+  background-image: 
+    radial-gradient(circle at center, 
+      rgba(137, 114, 92, 0.15) 0%, 
+      rgba(30, 28, 27, 0.9) 100%   
+    );
+  z-index: var(--z-base);
+}
+.section{
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+.services{
+  display: flex;
+}
+.services__title{
+  text-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  color: var(--color-text);
+}
+.services__subtitle{
+  max-width: 40ch;
+  margin-inline: auto;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+.services > *{
+  z-index: var(--z-content);
+}
+
+/* ======== prices section ======= */
+/* =============================== */
+.prices__filter{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem .5rem;
+  margin-block-end: var(--space-9);
+}
+h2.prices__title{
+  font-size: var(--step-4);
+  color: inherit;
+  text-transform:capitalize;
+  letter-spacing: var(--tracking-wider);
+  margin-block: var(--space-7);
+}
+.prices__group{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-4);
+}
+.prices__group-subtitle{
+  text-transform: uppercase;
+  font-size: var(--step-1);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-extra);
+  padding-block: var(--space-2);
+  color: var(--color-text-muted);
+}
+.prices__list > li{
+  padding-block: var(--space-2);
+  border-bottom: 1px solid var(--color-neutral-100);
+}
+.prices__item{
+  display: flex;
+  justify-content: space-between;
+}
+.prices__item-price{
+  /* Utiliser une police système très raffinée */
+  font-family: var(--ff-didone);
+  /* font-size: var(--fs-label); */
+  font-size: var(--step-0);
+  font-style: italic;
+  font-weight: var( --font-light);
+}
+.is-hidden{
+  display: none;
+}
+.prices__filter-btn.is-active {
+  border: 1px solid var(--color-border-muted);
+}
+.section__btns-action{
+  text-align: end;
+  padding-block-start: var(--space-4);
+}
+/* ======== Tablet screen Medium ========= */
+@media screen and (min-width: 48em) {
+  .prices__filter{
+    gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 64.5em){
+   .prices__filter{
+    gap: 2rem;
+  }
+}

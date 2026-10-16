@@ -1,0 +1,117 @@
+.section{
+  /* padding-inline: var(--space-4); */
+  padding-block: var(--space-9);
+  --section-title-color: var(--color-neutral-950);
+  --section-content-color: var(--color-neutral-700);
+}
+/* --- Variantes --- */
+.section--on-dark{
+  --section-title-color: var(--color-text-inverse);
+  --section-content-color: var(--color-text-inverse);
+}
+.section-on-light{
+  box-shadow: var(--shadow-lg);
+  background-color: var(--color-surface-alt);
+}
+.section--bg{
+  background: url(../images/booking/bg-booking-section.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 0;
+}
+/* --- Base commune à toutes les sections spéciales --- */
+.section-custom {
+  position: relative;
+  overflow: hidden; /* Évite les débordements de fonds */
+}
+
+/* Le conteneur interne passe toujours au-dessus du fond */
+.section-custom > .container {
+  position: relative;
+  z-index: var(--z-base);
+}
+
+.section-custom::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bg, none);
+  background-repeat: var(--bg-repeat);
+  background-size: var(--bg-size, auto);
+  opacity: var(--bg-opacity, 1);
+  z-index: var(--z-background);
+}
+
+/* --- Variante: Fond Image + Overlay sombre (ex: Booking) --- */
+.section-custom--image {
+  --bg-img: url('../../images/booking/bg-booking-900.webp');
+  background: var(--bg-img) no-repeat center / cover;
+  --bg: radial-gradient(circle at center, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+}
+
+/* --- Variante: Fond Motif / Pattern (ex: Services) --- */
+.section-custom--pattern {
+  --bg: radial-gradient(circle at bottom, transparent 24%, #D6A254 25%, #D6A254 30%, transparent 31%, transparent 39%, #D6A254 40%, #D6A254 45%, transparent 46%), 
+    radial-gradient(circle at top, transparent 24%, #D6A254 25%, #D6A254 30%, transparent 31%, transparent 39%, #D6A254 40%, #D6A254 45%, transparent 46%), 
+    radial-gradient(circle at left, transparent 24%, #D6A254 25%, #D6A254 30%, transparent 31%, transparent 39%, #D6A254 40%, #D6A254 45%, transparent 46%), 
+    radial-gradient(circle at right, transparent 24%, #D6A254 25%, #D6A254 30%, transparent 31%, transparent 39%, #D6A254 40%, #D6A254 45%, transparent 46%);
+  /* background: 
+    radial-gradient(circle at bottom, transparent 24%, #D6A254 25%, #D6A254 30%, transparent 31%, transparent 39%, #D6A254 40%, #D6A254 45%, transparent 46%), 
+    radial-gradient(circle at top, transparent 24%, #D6A254 25%, #D6A254 30%, transparent 31%, transparent 39%, #D6A254 40%, #D6A254 45%, transparent 46%), 
+    radial-gradient(circle at left, transparent 24%, #D6A254 25%, #D6A254 30%, transparent 31%, transparent 39%, #D6A254 40%, #D6A254 45%, transparent 46%), 
+    radial-gradient(circle at right, transparent 24%, #D6A254 25%, #D6A254 30%, transparent 31%, transparent 39%, #D6A254 40%, #D6A254 45%, transparent 46%); */
+  --bg-size: 6em 6em;
+  --bg-opacity: 0.1;
+}
+
+
+
+/* ============= ANIMATION ============= */
+/* 1. Par défaut, tes éléments du parcours sont invisibles et légèrement décalés vers le bas */
+.reveal-element{
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 600ms ease, transform 600ms ease;;
+}
+/* 2. Dès que le JS ajoute la classe, ils s'affichent en douceur */
+.reveal-element.is-reveal{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+/* ======== Tablet screen ========= */
+@media screen and (min-width: 48em) {
+  .section-custom--image{
+    --bg-img: url('../../images/booking/bg-booking-2048.webp');
+  }
+}
+
+@media screen and (min-width: 64.5em) {
+  .section{
+    /* padding-inline: var(--space-6); */
+    padding-block: var(--space-12);
+  }
+  .section--compact{
+    padding-block: var(--space-9);
+  }
+  .section-custom--image{
+    --bg-img: url('../../images/booking/bg-booking-1920.webp');
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

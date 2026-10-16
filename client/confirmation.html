@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.min.css" />
+    <link rel="stylesheet" href="styles/components/container.css">
+    <link rel="stylesheet" href="styles/components/buttons.css" />
+    <link rel="stylesheet" href="styles/components/section.css">
+    <link rel="stylesheet" href="styles/confirmation.css" />
+    <title>Confirmation de la reservation</title>
+  </head>
+  <body>
+    <section class="confirmation__card d-flex align-center">
+      <div class="container container--tight">
+        <header class="confirmation__header">
+          <h1 class="confirmation__title">
+            Votre demande a bien été enregistrée
+          </h1>
+          <p class="confirmation__greeting"></p>
+          <p class="confirmation__description">
+            Notre équipe vous contactera sous 24h pour confirmer votre rendez-vous.</p>
+        </header>
+        <hr class="confirmation__separator">
+        <div class="confirmation__body">
+          <h2 class="confirmation__section-title">Informations personnelles</h2>
+          <dl class="confirmation__details">
+            <div class="confirmation__row">
+              <div class="confirmation__field">
+                <dt class="confirmation__label">Nom</dt>
+                <dd class="confirmation__value" data-field="lastName"></dd>
+              </div>
+              <div class="confirmation__field">
+                <dt class="confirmation__label">Prénom</dt>
+                <dd class="confirmation__value" data-field="firstName"></dd>
+              </div>
+            </div>
+
+            <div class="confirmation__row">
+              <div class="confirmation__field">
+                <dt class="confirmation__label">Téléphone</dt>
+                <dd class="confirmation__value" data-field="phone"></dd>
+              </div>
+              <div class="confirmation__field">
+                <dt class="confirmation__label">Email</dt>
+                <dd class="confirmation__value" data-field="email"></dd>
+              </div>
+            </div>
+
+            <div class="confirmation__field">
+              <dt class="confirmation__label">Prestation</dt>
+              <dd class="confirmation__value" data-field="service"></dd>
+            </div>
+
+            <div class="confirmation__row">
+              <div class="confirmation__field">
+                <dt class="confirmation__label">Date</dt>
+                <dd class="confirmation__value" data-field="date"></dd>
+              </div>
+              <div class="confirmation__field">
+                <dt class="confirmation__label">Heure</dt>
+                <dd class="confirmation__value" data-field="time"></dd>
+              </div>
+            </div>
+
+            <div class="confirmation__field">
+              <dt class="confirmation__label">Message</dt>
+              <dd class="confirmation__value" data-field="message"></dd>
+            </div>
+          </dl>
+          <a href="/index.html" class="btn btn--confirmation">Retour à l'accueil</a>
+        </div>
+      </div>
+    </section>
+    <script src="scripts/confirmation.js"></script>
+  </body>
+</html>

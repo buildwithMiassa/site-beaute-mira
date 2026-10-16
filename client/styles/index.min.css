@@ -1,0 +1,209 @@
+.about__grid,
+.services__cards {
+  display: grid;
+  gap: var(--space-5);
+}
+.about__grid {
+  align-items: end;
+}
+.about .section__header {
+  order: 1;
+}
+.about__signature {
+  inline-size: 50%;
+  margin-inline: auto;
+  opacity: 0.8;
+}
+.about__picture {
+  height: 100%;
+}
+.about .about__picture img {
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+.services__cards .card {
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 2 / 3
+}
+.card__image{
+  block-size: 100%;
+}
+.card__description {
+  position: absolute;
+  color: var(--color-text-inverse);
+  inset: 0;
+  gap: var(--space-4);
+  padding-inline: var(--space-4);
+  padding-block-end: var(--space-4);
+  border: 5px solid var(--color-neutral-700);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.card__title {
+  text-shadow: var(--shadow-text);
+}
+.card__text {
+  color: inherit;
+  line-height: inherit;
+  opacity: 0.85;
+  text-shadow: var(--shadow-sm);
+}
+.testimonials {
+  box-shadow: var(--shadow-lg);
+  background-color: var(--color-surface-alt);
+}
+.testimonials__cards {
+  max-width: 50rem;
+  margin-inline: auto;
+  margin-block-start: var(--space-6);
+}
+.testimonials__cards .card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  padding-block: var(--space-7);
+  border-radius: var(--radius-lg);
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+.testimonials__cards .card.fade-out {
+  opacity: 0;
+}
+.card__message {
+  font-family: var(--ff-heading);
+  font-size: clamp(1.5rem, 0.8304rem + 2.9762vw, 2.75rem);
+  line-height: inherit;
+  color: var(--color-neutral-1000);
+  position: relative;
+  padding-inline: var(--space-2);
+}
+.card__message::before {
+  content: "\201C";
+  color: #c49f63;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-45%, -45%);
+  font-size: 8rem;
+  opacity: 0.2;
+}
+.testimonials__actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-5);
+  text-align: center;
+  margin-block-start: var(--space-7);
+}
+.testimonials__btn {
+  font-size: 2rem;
+  background-color: unset;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+}
+.testimonials__btn svg {
+  stroke: hsl(37, 45%, 58%);
+}
+.testimonials hr {
+  border-color: var(--color-border-muted);
+}
+.card__picture-wrapper {
+  width: 3.75rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #c49f63;
+  box-shadow: var(--shadow-sm);
+}
+.card__identity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  position: relative;
+  color: var();
+}
+.card__rating {
+  color: #c49f63;
+  opacity: 0.4;
+}
+.card__identity::after,
+.card__identity::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 5rem;
+  height: 1px;
+  transform: translateY(-50%);
+  background-color: #c49f63;
+}
+.card__identity::before {
+  left: calc(100% + 1rem);
+}
+.card__identity::after {
+  right: calc(100% + 1rem);
+}
+@media screen and (min-width: 48em) {
+  .about .about__picture {
+    justify-self: self-end;
+  }
+  .about .about__picture img {
+    object-fit: cover;
+    border-radius: 9.125rem 0.625rem 0.625rem;
+  }
+  .about__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-6);
+  }
+  .about__content {
+    align-self: end;
+  }
+  .services__cards {
+    grid-template-columns: repeat(auto-fit, minmax(min(21rem, 100%), 1fr));
+    gap: var(--space-6);
+    padding-inline: unset;
+  }
+  .testimonials__cards .card {
+    padding-inline: var(--space-6);
+  }
+}
+@media screen and (min-width: 64.5em) {
+  .testimonials__cards .card {
+    gap: var(--space-6);
+  }
+  .services-cards {
+    padding-inline: unset;
+    gap: 2em;
+    margin-top: var(--space-9);
+  }
+  .card__image {
+    inline-size: 100%;
+    block-size: 100%;
+    transition: transform 0.5s ease-in-out;
+  }
+  .card:hover .card__image {
+    transform: scale(1.2);
+  }
+  .card__description {
+    transform: translateY(100%);
+    transition:
+      transform 0.4s,
+      background 0.4s;
+  }
+  .card:hover .card__description {
+    backdrop-filter: blur(4px);
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.2)
+    );
+    transform: translateY(0);
+  }
+}

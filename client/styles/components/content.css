@@ -1,0 +1,87 @@
+h2{
+  --section-title-tracking: var(--tracking-tight);
+}
+.section__header{
+  text-align: center;
+}
+.section--left-aligned{
+  text-align: start;
+}
+.section__title{
+  --section-title-size: var(--step-6);
+  --section-title-tracking: var(--tracking-tight);
+  --section-title-spacing: var(--space-6);
+
+  font-size: var(--section-title-size);
+  color: var(--section-title-color);
+  margin-bottom: var(--section-title-spacing);
+}
+
+.section__title--sm{
+  --section-title-size: var(--font-size-step-title);
+}
+.section__title--compact{
+  --section-title-size: var(--font-size-step-title);
+  --section-title-tracking: normal;
+  --section-title-spacing: var(--space-5);
+}
+.section__title--spacious{
+  --section-title-size: var(--font-size-section-title);
+}
+.section__title--spacious span{
+  color: hsl(37, 45%, 58%);
+}
+/* .section__content — voir aussi override dans booking.css (espacement formulaire) */
+.section__content{
+  --section-content-spacing: var(--space-8);
+  --section-content-measure: none;
+
+  max-width: var(--section-content-measure);
+  margin-inline: auto;
+  margin-block-end: var(--section-content-spacing);
+  color: var(--section-content-color);
+}
+/* modificateur -gallery */
+.section__content--narrow{
+  --section-content-spacing: var(--space-9);
+}
+/* .section__content--mb-mobile{
+  margin-block-end: var(--space-9);
+} */
+
+
+@media screen and (min-width: 48em) {
+  .section__content{
+    --section-content-spacing: var(--space-11);
+    --section-content-measure: var(--text-medium);
+  }
+  .section__title{
+    --section-title-tracking: var(--tracking-wide);
+  }
+  .section__title--spacious{
+    --section-title-spacing: var(--space-9);
+
+  }
+  
+}
+
+@media screen and (min-width: 64.5em) {
+  .section__title--spacious{
+     --section-title-spacing: var(--space-12);
+     --section-title-tracking: var(--tracking-wide);
+  }
+  .section__title--compact{
+    --section-title-tracking: var(--tracking-normal);
+  }
+  .section__content {
+    --section-content-measure: var(--text-wide);
+    margin-inline: auto;
+  }
+  .section__content--reading{
+    --section-content-measure: var(--text-large)
+  }
+  /* .section__content--narrow{
+    --section-content-measure: var( --measure-lg);
+    margin-inline: initial;
+  } */
+}

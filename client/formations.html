@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Découvrez nos formations professionnelles et ateliers de beauté sur mesure à la Maison MIRA (soins, coiffure, maquillage, onglerie). Développez votre expertise." />
+
+    <link rel="preload" href="fonts/cormorant-garamond/cormorant-garamond-v21-latin-regular-subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/PlayfairDisplay/PlayfairDisplay-Regular-subset.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <link rel="stylesheet" href="styles/bundle-main.min.css">
+    <link rel="stylesheet" href="styles/training.min.css">
+    
+
+    <!-- flaticons -->
+    <link rel="shortcut icon" href="images/salon.png" type="image/x-icon" />
+    <title>Formations - Maison de beauté - MIRA</title>
+  </head>
+  <body>
+    <header class="header header--minimal">
+        <!-- top bar -->
+        <div class="header__before-navbar">
+          <address class="header__contact">
+            <svg
+              class="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#f1e7d0"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-phone-call preview-icon"
+            >
+              <path d="M13 2a9 9 0 0 1 9 9" />
+              <path d="M13 6a5 5 0 0 1 5 5" />
+              <path
+                d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+              />
+            </svg>
+            <span class="header__contact-label">Nous appelez : </span>
+            <a href="tel:+213 41 531 532" class="header__contact-value">+213 41 531 532</a>
+          </address>
+          <div class="header__hours">
+            <svg
+              class="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#f1e7d0"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-clock-8 preview-icon"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v6l-4 2" />
+            </svg>
+            <span class="header__contact-label">Jours d'ouverture :</span>
+            <span class="header__hours-value">samedi - vendredi, 08h - 21h</span>
+          </div>
+        </div>
+        <!-- navbar -->
+        <div class="header__navbar">
+          <a href="/" class="header__logo"><img src="images/logo/logo-mira-black.svg" width="602" height="171" alt="Logo Maison MIRA"/></a>
+          <nav id="main-menu" class="header__navmenu">
+            <ul class="navmenu__list">
+              <li class="navmenu__item">
+                <a href="index.html" class="navmenu__link" data-nav-link
+                  >Acceuil</a
+                >
+              </li>
+              <li class="navmenu__item">
+                <a href="services.html" class="navmenu__link" data-nav-link>Prestations</a>
+              </li>
+              <li class="navmenu__item">
+                <a href="formations.html" class="navmenu__link" data-nav-link>Formation</a>
+              </li>
+              <li class="navmenu__item">
+                <a href="gallery.html" class="navmenu__link" data-nav-link>Gallery</a>
+              </li>
+              <li class="navmenu__item">
+                <a href="booking.html" class="navmenu__link" data-nav-link>nous contacter</a>
+              </li>
+              <!-- <li><a href="" class="btn navmenu__btn">prendre rendez-vous</a></li> -->
+            </ul>
+          </nav>
+          <button class="hamburger humburger--dark" aria-label="toggle menu" aria-expanded="false" aria-controls="main-menu">
+            <svg
+              class="openIcon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="1" />
+              <circle cx="12" cy="19" r="1" />
+              <circle cx="12" cy="5" r="1" />
+            </svg>
+            <svg
+              class="closeIcon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </div>
+        <!-- hero -->
+        <div class="header__hero header__hero--dark">
+          <div class="header__hero-content">
+            <!-- <p class="section__label">L'EXPERIENCE</p> -->
+            <h1 class="header__hero-title">
+              Développez votre <span class="header__hero-text">expertise.</span> 
+            </h1>
+            <p class="header__hero-subtitle">
+              Nos formations et ateliers permettent d'acquérir des compétences et de se perfectionner dans l'univers de la beauté — transmises par nos praticiennes, dans l'écrin de la Maison MIRA.
+            </p>
+            <div class="header__hero-actions">
+              <a class="btn btn--icon" href="#professional-training">
+                <span class="btn__text">Formations pro</span>
+                <span class="btn__icon">
+                  <svg viewBox="0 -960 960 960">
+                    <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                  </svg>
+                </span>
+              </a>
+              <a class="btn btn--icon" href="#private-workshops">
+                <span class="btn__text">Ateliers particuliers</span>
+                <span class="btn__icon">
+                  <svg viewBox="0 -960 960 960">
+                    <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+          <!-- <div class="header__hero-image">
+            <img
+              src="images/formations/formation-hero.jpg"
+              alt="photo de l'interieur du salon"
+              srcset=""
+            />
+          </div> -->
+        </div>
+    </header>
+    <main>
+      <!-- Formations professionnelles -->
+      <section id="professional-training" class="section reveal-element">
+        <div class="container container--lg">
+        <header class="section__header">
+          <p class="section__label section__label--lines section__label--centered">POUR LES PROFESSIONNELLES</p>
+          <h2 class="section__title section__title--spacious">Formations professionnelles</h2>
+          <p class="section__content section__content--reading">Conçues pour les esthéticiennes souhaitant approfondir leur expertise, développer de nouvelles prestations ou obtenir une certification reconnue par la Maison.</p>
+        </header>
+        <ul class="training-list">
+          <li class="training-list__item">
+            <article class="training-card">
+              <div class="training-card__media"> 
+                <img class="training-card__image" src="images/training/formation-visage-760.webp" width="760" height="510"  
+                srcset="images/training/formation-visage-600.webp 600w, images/training/formation-visage-760.webp 760w, images/training/formation-visage-1000.webp 1000w" alt="Praticienne réalisant un soin du visage en atelier de formation"
+                sizes="(max-width: 64em) 100vw, 33vw" loading="lazy">
+              </div>
+              <div class="training-card__content">
+                <div class="training-card__body">
+                    <h3 class="training-card__title">Rituels visage & soins experts</h3>
+                    <p class="training-card__description">Maîtrisez les protocoles de soin visage haut de gamme, du diagnostic de peau aux techniques manuelles signature.</p>
+                </div>
+                <hr class="training-card__separator">
+                <dl class="training-card__meta">
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Durée</dt>
+                    <dd class="training-card__meta-value">2h</dd>
+                  </div>
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Nombre de participant(e)</dt>
+                    <dd class="training-card__meta-value">6</dd>
+                  </div>
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Certification</dt>
+                    <dd class="training-card__meta-value training-card__meta-value--accent">Certificat MIRA Expert Visage</dd>
+                  </div>
+                </dl>
+                <hr class="training-card__separator">
+                <div class="training-card__footer">
+                  <p class="training-card__price">20000DA</p>
+                  <div class="section__btns-action">
+                      <a class="btn btn--icon btn--non-border" data-target="contact" href="booking.html">
+                        <span class="btn__text">Decouvrir</span>
+                        <span class="btn__icon">
+                          <svg viewBox="0 -960 960 960">
+                          <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                          </svg>
+                        </span>
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="training-list__item">
+            <article class="training-card">
+              <div class="training-card__media"> 
+                <img class="training-card__image" src="images/training/formation-coiffure-760.webp" width="760" height="510" 
+                srcset="images/training/formation-coiffure-600.webp 600w, images/training/formation-coiffure-760.webp 760w, images/training/formation-coiffure-1000.webp 1000w" alt="Coloriste appliquant une technique de balayage sur modèle"
+                sizes="(max-width: 64em) 100vw, 33vw" loading="lazy">
+              </div>
+              <div class="training-card__content">
+                <div class="training-card__body">
+                    <h3 class="training-card__title">Coiffure & expertise couleur</h3>
+                    <p class="training-card__description">Techniques de coupe, brushing et balayage pensées pour une clientèle exigeante et un rendu éditorial.</p>
+                </div>
+                <hr class="training-card__separator">
+                <dl class="training-card__meta">
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Durée</dt>
+                    <dd class="training-card__meta-value">6 jours · 42 h</dd>
+                  </div>
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Nombre de participant(e)</dt>
+                    <dd class="training-card__meta-value">CAP requis</dd>
+                  </div>
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Certification</dt>
+                    <dd class="training-card__meta-value training-card__meta-value--accent">Certificat MIRA Coiffure Avancée</dd>
+                  </div>
+                </dl>
+                <hr class="training-card__separator">
+                <div class="training-card__footer">
+                  <p class="training-card__price">20000DA</p>
+                  <div class="section__btns-action">
+                      <a class="btn btn--icon btn--non-border" data-target="contact" href="booking.html">
+                        <span class="btn__text">Decouvrir</span>
+                        <span class="btn__icon">
+                          <svg viewBox="0 -960 960 960">
+                          <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                          </svg>
+                        </span>
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="training-list__item">
+            <article class="training-card">
+              <div class="training-card__media"> 
+                <img class="training-card__image" src="images/training/formation-maquillage-760.webp" width="760" height="510" 
+                srcset="images/training/formation-maquillage-600.webp 600w, images/training/formation-maquillage-760.webp 760w, images/training/formation-maquillage-1000.webp 1000w" alt="Formation maquillage professionnel, application sur modèle"
+                sizes="(max-width: 64em) 100vw, 33vw" loading="lazy">
+              </div>
+              <div class="training-card__content">
+                <div class="training-card__body">
+                    <h3 class="training-card__title">Maquillage & mise en beauté</h3>
+                    <p class="training-card__description">Du teint nude lumineux au maquillage de mariée, une formation complète orientée clientèle premium.</p>
+                </div>
+                <hr class="training-card__separator">
+                <dl class="training-card__meta">
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Durée</dt>
+                    <dd class="training-card__meta-value">4 jours · 28 h</dd>
+                  </div>
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Nombre de participant(e)</dt>
+                    <dd class="training-card__meta-value">Débutantes acceptées</dd>
+                  </div>
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Certification</dt>
+                    <dd class="training-card__meta-value training-card__meta-value--accent">Certificat MIRA Make-up Artist</dd>
+                  </div>
+                </dl>
+                <hr class="training-card__separator">
+                <div class="training-card__footer">
+                  <p class="training-card__price">16000DA</p>
+                  <div class="section__btns-action">
+                      <a class="btn btn--icon btn--non-border" data-target="contact" href="booking.html">
+                        <span class="btn__text">Decouvrir</span>
+                        <span class="btn__icon">
+                          <svg viewBox="0 -960 960 960">
+                          <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                          </svg>
+                        </span>
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="training-list__item">
+            <article class="training-card">
+              <div class="training-card__media"> 
+                <img class="training-card__image" src="images/training/formation-mains-760.webp" width="760" height="510" 
+                srcset="images/training/formation-mains-600.webp 600w, images/training/formation-mains-760.webp 760w,,images/training/formation-mains-1000.webp 1000w" alt="Manucure signature MIRA réalisée en atelier de formation"
+                sizes="(max-width: 64em) 100vw, 33vw" loading="lazy">
+              </div>
+              <div class="training-card__content">
+                <div class="training-card__body">
+                    <h3 class="training-card__title">Onglerie & beauté des mains</h3>
+                    <p class="training-card__description">Manucure russe, pose de gel et finitions parfaites pour proposer une prestation signature en institut.</p>
+                </div>
+                <hr class="training-card__separator">
+                <dl class="training-card__meta">
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Durée</dt>
+                    <dd class="training-card__meta-value">3 jours · 21 h</dd>
+                  </div>
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Nombre de participant(e)</dt>
+                    <dd class="training-card__meta-value">Tous Nombre de participant(e)x</dd>
+                  </div>
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Certification</dt>
+                    <dd class="training-card__meta-value training-card__meta-value--accent">Certificat MIRA Nail Expert</dd>
+                  </div>
+                </dl>
+                <hr class="training-card__separator">
+                <div class="training-card__footer">
+                  <p class="training-card__price">13000DA</p>
+                  <div class="section__btns-action">
+                      <a class="btn btn--icon btn--non-border" data-target="contact" href="booking.html">
+                        <span class="btn__text">Decouvrir</span>
+                        <span class="btn__icon">
+                          <svg viewBox="0 -960 960 960">
+                          <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                          </svg>
+                        </span>
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="training-list__item">
+            <article class="training-card">
+              <div class="training-card__media"> 
+                <img class="training-card__image" src="images/training/formation-regard-760.webp" width="760" height="510" 
+                srcset="images/training/formation-regard-600.webp 600w, images/training/formation-regard-760.webp 760w, images/training/formation-regard-1000.webp 1000w" alt="Restructuration de sourcils lors d'un atelier de formation"
+                sizes="(max-width: 64em) 100vw, 33vw" loading="lazy">
+              </div>
+              <div class="training-card__content">
+                <div class="training-card__body">
+                    <h3 class="training-card__title">Beauté du regard</h3>
+                    <p class="training-card__description">Restructuration du regard : architecture des sourcils, teinture végétale et lash lift longue tenue.</p>
+                </div>
+                <hr class="training-card__separator">
+                <dl class="training-card__meta">
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Durée</dt>
+                    <dd class="training-card__meta-value">2 jours · 14 h</dd>
+                  </div>
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Nombre de participant(e)</dt>
+                    <dd class="training-card__meta-value">Esthéticiennes diplômées</dd>
+                  </div>
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Certification</dt>
+                    <dd class="training-card__meta-value training-card__meta-value--accent">Certificat MIRA Regard</dd>
+                  </div>
+                </dl>
+                <hr class="training-card__separator">
+                <div class="training-card__footer">
+                  <p class="training-card__price">16000DA</p>
+                  <div class="section__btns-action">
+                      <a class="btn btn--icon btn--non-border" data-target="contact" href="booking.html">
+                        <span class="btn__text">Decouvrir</span>
+                        <span class="btn__icon">
+                          <svg viewBox="0 -960 960 960">
+                          <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                          </svg>
+                        </span>
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="training-list__item">
+            <article class="training-card">
+              <div class="training-card__media"> 
+                <img class="training-card__image" src="images/training/formation-corps-760.webp" width="760" height="510" 
+                srcset="images/training/formation-corps-600.webp 600w, images/training/formation-corps-760.webp 760w, images/training/formation-corps-1000.webp 1000w" alt="Démonstration d'un modelage corps en formation professionnelles"
+                sizes="(max-width: 64em) 100vw, 33vw" loading="lazy">
+              </div>
+              <div class="training-card__content">
+                <div class="training-card__body">
+                    <h3 class="training-card__title">Rituels corps & modelages</h3>
+                    <p class="training-card__description">Protocoles de modelage et rituels sensoriels pour enrichir votre carte de soins corps.</p>
+                </div>
+                <hr class="training-card__separator">
+                <dl class="training-card__meta">
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Durée</dt>
+                    <dd class="training-card__meta-value">4 jours · 28 h</dd>
+                  </div>
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Nombre de participant(e)</dt>
+                    <dd class="training-card__meta-value">Esthéticiennes diplômées</dd>
+                  </div>
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Certification</dt>
+                    <dd class="training-card__meta-value training-card__meta-value--accent">Certificat MIRA Rituels Corps</dd>
+                  </div>
+                </dl>
+                <hr class="training-card__separator">
+                <div class="training-card__footer">
+                  <p class="training-card__price">25000DA</p>
+                  <div class="section__btns-action">
+                      <a class="btn btn--icon btn--non-border" data-target="contact" href="booking.html">
+                        <span class="btn__text">Decouvrir</span>
+                        <span class="btn__icon">
+                          <svg viewBox="0 -960 960 960">
+                          <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                          </svg>
+                        </span>
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </li>
+        </ul>
+        </div>
+      </section>
+
+      <!-- ========================== -->
+      <!-- Ateliers particuliers -->
+      <section id="private-workshops" class="section reveal-element section-on-light section--private-workshops">
+        <div class="container container--lg">
+        <header class="section__header">
+          <p class="section__label section__label--lines section__label--centered">POUR LES PARTICULIERS</p>
+          <h2 class="section__title section__title--spacious">Ateliers particuliers</h2>
+          <p class="section__content section__content--reading">Des moments de découverte, d'apprentissage et de partage autour de la beauté — sans prérequis, simplement l'envie d'apprendre et de se faire plaisir.</p>
+        </header>
+        <ul class="training-list">
+          <li class="training-list__item">
+            <article class="training-card">
+              <div class="training-card__media"> 
+                <img class="training-card__image" src="images/training/workshops/makeup-detail-760.webp" width="760" height="510" 
+                srcset="images/training/workshops/makeup-detail-600.webp 600w, images/training/workshops/makeup-detail-760.webp 760w, images/training/workshops/makeup-detail-1000.webp 1000w" alt="Participante s'exerçant à l'auto-maquillage lors d'un atelier particulier"
+                sizes="(max-width: 64em) 100vw, 33vw" loading="lazy">
+              </div>
+              <div class="training-card__content">
+                <div class="training-card__body">
+                    <h3 class="training-card__title">Auto-maquillage lumineux</h3>
+                    <p class="training-card__description">Apprenez les gestes justes pour révéler votre visage en quelques minutes, chaque matin.</p>
+                </div>
+                <hr class="training-card__separator">
+                <dl class="training-card__meta">
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Durée</dt>
+                    <dd class="training-card__meta-value">2 h</dd>
+                  </div>
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Nombre de participant(e)</dt>
+                    <dd class="training-card__meta-value">6</dd>
+                  </div>
+                </dl>
+                <hr class="training-card__separator">
+                <div class="training-card__footer">
+                  <p class="training-card__price">20000DA</p>
+                  <div class="section__btns-action">
+                      <a class="btn btn--icon btn--non-border" data-target="contact" href="booking.html">
+                        <span class="btn__text">Decouvrir</span>
+                        <span class="btn__icon">
+                          <svg viewBox="0 -960 960 960">
+                          <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                          </svg>
+                        </span>
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="training-list__item">
+            <article class="training-card">
+              <div class="training-card__media"> 
+                <img class="training-card__image" src="images/training/workshops/ateliers-particuliers/diagnostic-products-760.jpg" width="760" height="510" 
+                srcset="images/training/workshops/diagnostic-products-600.webp 600w, images/training/workshops/diagnostic-products-760.webp 760w, images/training/workshops/diagnostic-products-1000.webp 1000w" alt="Diagnostic de peau et sélection de produits lors d'un atelier particulier"
+                sizes="(max-width: 64em) 100vw, 33vw" loading="lazy">
+              </div>
+              <div class="training-card__content">
+                <div class="training-card__body">
+                    <h3 class="training-card__title">Ma routine sur mesure</h3>
+                    <p class="training-card__description">Comprendre sa peau, choisir ses textures et composer une routine simple et efficace.</p>
+                </div>
+                <hr class="training-card__separator">
+                <dl class="training-card__meta">
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Durée</dt>
+                    <dd class="training-card__meta-value">1 h 30</dd>
+                  </div>
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Nombre de participant(e)</dt>
+                    <dd class="training-card__meta-value">8</dd>
+                  </div>
+                </dl>
+                <hr class="training-card__separator">
+                <div class="training-card__footer">
+                  <p class="training-card__price">20000DA</p>
+                  <div class="section__btns-action">
+                      <a class="btn btn--icon btn--non-border" data-target="contact" href="booking.html">
+                        <span class="btn__text">Decouvrir</span>
+                        <span class="btn__icon">
+                          <svg viewBox="0 -960 960 960">
+                          <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                          </svg>
+                        </span>
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="training-list__item">
+            <article class="training-card">
+              <div class="training-card__media"> 
+                <img class="training-card__image" src="images/training/workshops/hair-gesture-760.webp" width="760" height="510" 
+                srcset="images/training/workshops/hair-gesture-600.webp 600w, images/training/workshops/hair-gesture-760.webp 760w, images/training/workshops/hair-gesture-1000.webp 1000w" alt="Démonstration d'un geste de brushing en atelier particulier"
+                sizes="(max-width: 64em) 100vw, 33vw" loading="lazy">
+              </div>
+              <div class="training-card__content">
+                <div class="training-card__body">
+                    <h3 class="training-card__title">Coiffage & brushing maison</h3>
+                    <p class="training-card__description">Les techniques de nos coiffeurs pour un brushing souple et des ondulations naturelles chez soi.</p>
+                </div>
+                <hr class="training-card__separator">
+                <dl class="training-card__meta">
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Durée</dt>
+                    <dd class="training-card__meta-value">2 h</dd>
+                  </div>
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Nombre de participant(e)</dt>
+                    <dd class="training-card__meta-value">6</dd>
+                  </div>
+                </dl>
+                <hr class="training-card__separator">
+                <div class="training-card__footer">
+                  <p class="training-card__price">16000DA</p>
+                  <div class="section__btns-action">
+                      <a class="btn btn--icon btn--non-border" data-target="contact" href="booking.html">
+                        <span class="btn__text">Decouvrir</span>
+                        <span class="btn__icon">
+                          <svg viewBox="0 -960 960 960">
+                          <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                          </svg>
+                        </span>
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="training-list__item">
+            <article class="training-card">
+              <div class="training-card__media"> 
+                <img class="training-card__image" src="images/training/workshops/atelier-prive-amies-760.webp" width="760" height="510" 
+                srcset="images/training/workshops/atelier-prive-amies-600.webp 600w, images/training/workshops/atelier-prive-amies-760.webp 760w, images/training/workshops/atelier-prive-amies-1000.webp 1000w" alt="Groupe d'amies lors d'un atelier beauté privatisée">
+              </div>
+              <div class="training-card__content"
+              sizes="(max-width: 64em) 100vw, 33vw" loading="lazy">
+                <div class="training-card__body">
+                    <h3 class="training-card__title">Atelier privé entre amies</h3>
+                    <p class="training-card__description">Une parenthèse beauté privatisée : conseils personnalisés et bonne humeur.</p>
+                </div>
+                <hr class="training-card__separator">
+                <dl class="training-card__meta">
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Durée</dt>
+                    <dd class="training-card__meta-value">3 h</dd>
+                  </div>
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Nombre de participant(e)</dt>
+                    <dd class="training-card__meta-value">4 a 10</dd>
+                  </div>
+                </dl>
+                <hr class="training-card__separator">
+                <div class="training-card__footer">
+                  <p class="training-card__price">13000DA</p>
+                  <div class="section__btns-action">
+                      <a class="btn btn--icon btn--non-border" data-target="contact" href="booking.html">
+                        <span class="btn__text">Decouvrir</span>
+                        <span class="btn__icon">
+                          <svg viewBox="0 -960 960 960">
+                          <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                          </svg>
+                        </span>
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="training-list__item">
+            <article class="training-card">
+              <div class="training-card__media"> 
+                <img class="training-card__image" src="images/formations/training/workshops/treatment-texture-760.jpg" width="760" height="510" 
+                srcset="images/training/workshops/treatment-texture-600.webp 600w, images/training/workshops/treatment-texture-760.webp 760w, images/training/workshops/treatment-texture-1000.webp 1000w" alt="Découverte sensorielle de textures cosmétiques en atelier particulier">
+              </div>
+              <div class="training-card__content"
+              sizes="(max-width: 64em) 100vw, 33vw" loading="lazy">
+                <div class="training-card__body">
+                    <h3 class="training-card__title">Découverte des textures</h3>
+                    <p class="training-card__description">Un moment sensoriel pour apprendre à lire une formule et reconnaître les actifs qui vous conviennent.</p>
+                </div>
+                <hr class="training-card__separator">
+                <dl class="training-card__meta">
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Durée</dt>
+                    <dd class="training-card__meta-value">1 h</dd>
+                  </div>
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Nombre de participant(e)</dt>
+                    <dd class="training-card__meta-value">10</dd>
+                  </div>
+                </dl>
+                <hr class="training-card__separator">
+                <div class="training-card__footer">
+                  <p class="training-card__price">16000DA</p>
+                  <div class="section__btns-action">
+                      <a class="btn btn--icon btn--non-border" data-target="contact" href="booking.html">
+                        <span class="btn__text">Decouvrir</span>
+                        <span class="btn__icon">
+                          <svg viewBox="0 -960 960 960">
+                          <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                          </svg>
+                        </span>
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="training-list__item">
+            <article class="training-card">
+              <div class="training-card__media"> 
+                <img class="training-card__image" src="images/training/workshops/manicure-760.webp" width="760" height="510" 
+                srcset="images/training/workshops/manicure-600.webp 600w, images/training/workshops/manicure-760.webp 760w, images/training/workshops/manicure-1000.webp 1000w" alt="Manucure réalisée lors de l'atelier Mains & ongles parfaits">
+              </div>
+              <div class="training-card__content"
+              sizes="(max-width: 64em) 100vw, 33vw" loading="lazy">
+                <div class="training-card__body">
+                    <h3 class="training-card__title">Mains & ongles parfaits</h3>
+                    <p class="training-card__description">PLimage, soin des cuticules et pose de vernis impeccable : la manucure maison, version institut.</p>
+                </div>
+                <hr class="training-card__separator">
+                <dl class="training-card__meta">
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Durée</dt>
+                    <dd class="training-card__meta-value">1 h 30</dd>
+                  </div>
+                  <div class="training-card__meta-item">
+                    <dt class="training-card__meta-label">Nombre de participant(e)</dt>
+                    <dd class="training-card__meta-value">6</dd>
+                  </div>
+                </dl>
+                <hr class="training-card__separator">
+                <div class="training-card__footer">
+                  <p class="training-card__price">25000DA</p>
+                  <div class="section__btns-action">
+                      <a class="btn btn--icon btn--non-border" data-target="contact" href="booking.html">
+                        <span class="btn__text">Decouvrir</span>
+                        <span class="btn__icon">
+                          <svg viewBox="0 -960 960 960">
+                          <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                          </svg>
+                        </span>
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </li>
+        </ul>
+        </div>
+      </section>
+
+      <!-- ========================== -->
+      <section class="section reveal-element header__hero--dark">
+        <div class="container container--lg">
+        <div class="section__header">
+            <p class="section__label section__label--centered section__label--lines">rejoignez-nous</p>
+            <h2 class="section__title section__title--compact">Une question sur nos formations ?</h2>
+            <p class="section__content section__content--reading">Notre équipe pédagogique vous accompagne dans le choix du parcours le plus adapté à votre projet..</p>
+            <div class="header__hero-actions header__hero-actions-tight">
+              <a class="btn btn--icon" href="tel:+213656510091">
+                <span class="btn__text">Nous appeler</span>
+                <span class="btn__icon">
+                  <svg viewBox="0 -960 960 960">
+                    <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                  </svg>
+                </span>
+              </a>
+              <a class="btn btn--icon" href="mailto:contact@mira.dz">
+                <span class="btn__text">Écrire a la maison</span>
+                <span class="btn__icon">
+                  <svg viewBox="0 -960 960 960">
+                    <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+          </div>
+      </section>
+
+        <!-- section footer -->
+       <footer class="section footer">
+        <div class="container">
+          <!-- Bloc principal avec colonnes -->
+          <div class="footer__top">
+            <div class="footer__brand">
+              <a href="/" class="footer__logo"><img src="images/logo/logo-mira.svg" width="602" height="171" alt="Logo Maison MIRA" loading="lazy"/></a>
+              <p class="footer__tagline">"Votre maison de beauté à Oran"</p>
+            </div>
+            <nav class="footer__nav">
+              <h3 class="footer__heading">Navigation</h3>
+              <ul class="footer__nav-list">
+                <li class="footer__nav-item"><a href="index.html" class="footer__nav-link" data-nav-link>Acceuil</a></li>
+                <li class="footer__nav-item"><a href="services.html" class="footer__nav-link">Prestations</a></li>
+                <li class="footer__nav-item"><a href="formations.html" class="footer__nav-link">Formation</a></li>
+                <li class="footer__nav-item"><a href="gallery.html" class="footer__nav-link">Gallery</a></li>
+                <li class="footer__nav-item"><a href="booking.html" class="footer__nav-link">nous contacter</a></li>
+                <!-- <li><a href="" class="btn navmenu__btn">prendre rendez-vous</a></li> -->
+              </ul>
+            </nav>
+            <div class="footer__contact">
+              <h3 class="footer__heading">Contact</h3>
+              <address class="footer__address"> 
+                <a href="tel:+213 41 531 532" class="footer__contact-link">+213 41 531 532</a>
+                <a href="mailto:contact@mira.dz" class="footer__contact-link">contact@mira.dz</a>
+                <span>15 Rue de la Beauté</span>
+              </address>
+            </div>
+            <div class="footer__social">
+              <h3 class="footer__heading">Suivez-nous</h3>
+              <ul class="footer__social-list">
+                <li><a href="#" class="footer__social-link">Instagram</a></li>
+                <li><a href="#" class="footer__social-link">Facebook</a></li>
+                <li><a href="#" class="footer__social-link">TikTok</a></li>
+              </ul>
+              
+            </div>
+          </div>
+          <hr>
+          <!-- Barre de copyright -->
+          <div class="footer__bottom">
+            <p class="footer__copyright">© 2026 Maison MIRA. Tous droits réservés.</p>
+          </div>
+        </div>
+       </footer>
+    </main>
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/observer.js" defer></script>
+    <script src="scripts/active-state.js" defer></script>
+  </body>
+</html>

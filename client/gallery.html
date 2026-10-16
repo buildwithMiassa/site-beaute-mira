@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Immersion dans l'univers de Mira Maison de Beauté. Parcourez notre galerie et découvrez l'excellence de nos soins d'exception." />
+
+    <link rel="preload" href="fonts/cormorant-garamond/cormorant-garamond-v21-latin-regular-subset.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/PlayfairDisplay/PlayfairDisplay-Regular-subset.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <link rel="stylesheet" href="styles/bundle-main.min.css">
+    <link rel="stylesheet" href="styles/gallery.min.css">
+
+    <!-- flaticons -->
+    <link rel="shortcut icon" href="images/salon.png" type="image/x-icon">
+    <title>Gallery - Maison de beauté - MIRA</title>
+  </head>
+  <body>
+    <header class="header header--split">
+          <!-- top bar -->
+        <div class="header__before-navbar">
+          <address class="header__contact">
+            <svg
+              class="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#f1e7d0"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-phone-call preview-icon"
+            >
+              <path d="M13 2a9 9 0 0 1 9 9" />
+              <path d="M13 6a5 5 0 0 1 5 5" />
+              <path
+                d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+              />
+            </svg>
+            <span class="header__contact-label">Nous appelez : </span>
+            <a href="tel:+213 41 531 532" class="header__contact-value">+213 41 531 532</a>
+          </address>
+          <div class="header__hours">
+            <svg
+              class="icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#f1e7d0"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-clock-8 preview-icon"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v6l-4 2" />
+            </svg>
+            <span class="header__contact-label">Jours d'ouverture :</span>
+            <span class="header__hours-value">samedi - vendredi, 08h - 21h</span>
+          </div>
+        </div>
+          <!-- navbar -->
+        <div class="header__navbar">
+            <a href="/" class="header__logo"><img src="images/logo/logo-mira-black.svg" width="602" height="171" alt="Logo Maison MIRA"/></a>
+            <nav id="main-menu" class="header__navmenu">
+              <ul class="navmenu__list">
+                <li class="navmenu__item"><a href="index.html" class="navmenu__link" data-nav-link>Acceuil</a></li>
+                <li class="navmenu__item"><a href="services.html" class="navmenu__link" data-nav-link>Prestations</a></li>
+                <li class="navmenu__item"><a href="formations.html" class="navmenu__link" data-nav-link>Formation</a></li>
+                <li class="navmenu__item"><a href="gallery.html" class="navmenu__link" data-nav-link>Gallery</a></li>
+                <li class="navmenu__item"><a href="booking.html" class="navmenu__link" data-nav-link>nous contacter</a></li>
+                <!-- <li><a href="" class="btn navmenu__btn">prendre rendez-vous</a></li> -->
+              </ul>
+            </nav>
+            <button class="hamburger humburger--dark" aria-label="toggle menu" aria-expanded="false" aria-controls="main-menu">
+            <svg
+              class="openIcon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="1" />
+              <circle cx="12" cy="19" r="1" />
+              <circle cx="12" cy="5" r="1" />
+            </svg>
+            <svg
+              class="closeIcon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </div>
+          <!-- hero -->
+        <div class="header__hero hero">
+              <div class="header__hero-grid">
+                <div class="header__hero-content">
+                  <p class="section__label">L'EXPERIENCE</p>
+                  <h1 class="header__hero-title">
+                    Une<span class="header__hero-text"> maison</span><br>dédiée à votre beauté.</h1>
+                  <p class="header__hero-subtitle">Découvrez l'univers MIRA, un espace d'exception dédié à la beauté, au soin et au raffinement, à travers une visite immersive où chaque détail révèle notre savoir-faire.</p>
+                  <div class="header__hero-actions">
+                    <a class="btn btn--icon btn--light" href="#section__experience">
+                      <span class="btn__text">commencer la visite</span>
+                      <span class="btn__icon">
+                        <svg viewBox="0 -960 960 960">
+                          <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                        </svg>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                <picture class="header__hero-image">
+                  <!-- <img src="images/gallery/hero-img.png" alt="photo de l'interieur du salon" srcset=""> -->
+                   <source media="(min-width: 64.5em)" 
+                   srcset="images/gallery/hero-img-600.webp 600w, images/gallery/hero-img-1000.webp 1000w, images/gallery/hero-img-1600.webp 1600w" 
+                   sizes="45vw"
+                   type="image/webp">
+
+                   <source media="(min-width: 48em)" 
+                   srcset="images/gallery/hero-img-1000.webp 1000w, images/gallery/hero-img-1600.webp 1600w" sizes="calc(100vw - 6rem)"
+                   type="image/webp">
+
+                   <!-- <source 
+                  media="(max-width: 47.99em)" 
+                  srcset="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"> -->
+                  <source media="(max-width: 47.99em)"
+                  srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+
+                  <img 
+                  src="images/gallery/hero-img-1000.webp" 
+                  alt="la reception du salon de beaute Mira" 
+                  width="1000" 
+                  height="667"
+                  fetchpriority="high">
+                </picture>
+              </div>
+        </div>
+    </header>
+
+    <main>
+      <section id="section__experience" class="section experience">
+        <header class="section__header">
+          <p class="section__label section__label--lines section__label--centered">LE PARCOURS MIRA</p>
+          <h2 class="section__title section__title--spacious">Un <span>parcours d'exception</span>, <br>pensé pour vous.<br></h2>
+          <!-- L'art de l'accueil. L'excellence du soin. -->
+        </header>
+        <article class="experience__step container container--lg reveal-element">
+          <div class="section__container d-flex">
+            <!-- Colonne texte & petites images -->
+            <div class="section__content-wrapper grid">
+              <div class="section__header section--left-aligned">
+                <p class="section__label">L'ARRIVÉE</p>
+                <h3 class="section__title section__title--compact">Un lieu, une atmosphère</h3>
+                <p class="section__content section__content--narrow">Dès votre arrivée, l'atmosphère raffinée de MIRA vous accueille. Marbre, bois clair et lumière feutrée vous plongent dans un moment d'exception.</p>
+              </div>
+              <div class="section__media section__media--primary">
+                <img src="images/gallery/arrival-lounge-800.webp" width="800" height="537" alt="photo du salon d'accueil" 
+                srcset="images/gallery/arrival-lounge-600.webp 600w, images/gallery/arrival-lounge-800.webp 800w" 
+                sizes="(max-width:95rem) 43vw, 100vw" loading="lazy">
+              </div>
+              <div class="section__media section__media--secondary">
+                <img src="images/gallery/arrival-candles-800.webp" width="800" height="537" alt="photo de bougies relaxantes" 
+                srcset="images/gallery/arrival-candles-600.webp 600w, images/gallery/arrival-candles-800.webp 800w" 
+                sizes="(max-width:95rem) 43vw, 100vw" loading="lazy">
+              </div>
+            </div>
+            <!-- Colonne grande image de façade -->
+            <div class="section__banner">
+              <img src="images/gallery/mira-facade-1000.webp" width="1000" height="671" alt="photo de la facade de l'institut MIRA" 
+              srcset="images/gallery/mira-facade-600.webp 600w, images/gallery/mira-facade-1000.webp 1000w, images/gallery/mira-facade-1600.webp 1600w" 
+              sizes="(max-width:95rem) 57vw, 100vw" loading="lazy">
+            </div>
+          </div>
+        </article>
+        <article class="experience__step container container--lg reveal-element">
+          <div class="section__container d-flex">
+            <!-- Colonne texte & petites images -->
+            <div class="section__content-wrapper grid">
+              <div class="section__header section--left-aligned">
+                <p class="section__label">LE DIAGNOSTIC</p>
+                <h3 class="section__title section__title--compact">Une écoute, un diagnostic sur mesure</h3>
+                <p class="section__content section__content--narrow">Chaque prestation débute par un échange personnalisé afin de composer un rituel adapté à vos envies et à votre peau.</p>
+              </div>
+              <div class="section__media section__media--primary">
+                <img src="images/gallery/diagnostic-skin-800.webp" width="800" height="537" alt="photo diagnostique de la peau" 
+                srcset="images/gallery/diagnostic-skin-600.webp 600w, images/gallery/diagnostic-skin-800.webp 800w" 
+                sizes="(max-width:95rem) 43vw, 100vw" loading="lazy">
+              </div>
+              <div class="section__media section__media--secondary">
+                <img src="images/gallery/diagnostic-products-800.webp" width="800" height="537" alt="photo des produits utilises" 
+                srcset="images/gallery/diagnostic-products-600.webp 600w, images/gallery/diagnostic-products-800.webp 800w" 
+                sizes="(max-width:95rem) 43vw, 100vw" loading="lazy">
+              </div>
+            </div>
+            <!-- Colonne grande image de façade -->
+            <div class="section__banner">
+              <img src="images/gallery/diagnostic-consult-1000.webp" width="1000" height="671" alt="photo d'une employee qui diagnostique les cheveux d'une cliente" 
+              srcset="images/gallery/diagnostic-consult-600.webp 600w, images/gallery/diagnostic-consult-1000.webp 1000w, images/gallery/diagnostic-consult-1600.webp 1600w" 
+              sizes="(max-width:95rem) 57vw, 100vw" loading="lazy">
+            </div>
+          </div>
+        </article>
+        <article class="experience__step container container--lg reveal-element">
+          <div class="section__container d-flex">
+            <!-- Colonne texte & petites images -->
+            <div class="section__content-wrapper grid">
+              <div class="section__header section--left-aligned">
+                <p class="section__label">LA COIFFURE</p>
+                <h3 class="section__title section__title--compact">L'art de la coiffure</h3>
+                <p class="section__content section__content--narrow">Un espace dédié où l'expertise de nos coiffeurs sublime chaque chevelure : coupe, couleur, coiffage — la précision au service de votre style.</p>
+              </div>
+              <div class="section__media section__media--primary">
+                <img src="images/gallery/diagnostic-hair-800.webp" width="800" height="537" alt="photo d'analyse du cheveux"
+                srcset="images/gallery/diagnostic-hair-600.webp 600w, images/gallery/diagnostic-hair-800.webp 800w" 
+                sizes="(max-width:95rem) 43vw, 100vw" loading="lazy">
+              </div>
+              <div class="section__media section__media--secondary">
+                <!-- <img src="images/gallery/treatment-texture.jpg" alt="" srcset=""> -->
+                 <img src="images/gallery/hair-highlights-800.webp" width="800" height="537" alt="photo du resultat d'un balayage d'une cliente " 
+                 srcset="images/gallery/hair-highlights-600.webp 600w, images/gallery/hair-highlights-800.webp 800w" 
+                sizes="(max-width:95rem) 43vw, 100vw" loading="lazy">
+              </div>
+            </div>
+            <!-- Colonne grande image de façade -->
+            <div class="section__banner">
+              <img src="images/gallery/space-hair-1000.webp" width="1000" height="671" alt="photo de l'espace coiffure" 
+              srcset="images/gallery/space-hair-600.webp 600w, images/gallery/space-hair-1000.webp 1000w, images/gallery/space-hair-1600.webp 1600w" 
+              sizes="(max-width:95rem) 57vw, 100vw" loading="lazy">
+            </div>
+          </div>
+        </article>
+        <article class="experience__step container container--lg reveal-element">
+          <div class="section__container d-flex">
+            <!-- Colonne texte & petites images -->
+            <div class="section__content-wrapper grid">
+              <div class="section__header section--left-aligned">
+                <p class="section__label">LES SOINS</p>
+                <h3 class="section__title section__title--compact">Rituels visage & corps</h3>
+                <p class="section__content section__content--narrow">Dans le silence feutré de nos cabines, chaque geste devient un art. Textures précieuses, mains expertes, lumières tamisées.</p>
+              </div>
+              <div class="section__media section__media--primary">
+                <img src="images/gallery/equipment-800.webp" width="800" height="537" alt="photo d'un equipement masque led pour le visage"
+                srcset="images/gallery/equipment-600.webp 600w, images/gallery/equipment-800.webp 800w" 
+                sizes="(max-width:95rem) 43vw, 100vw" loading="lazy">
+              </div>
+              <div class="section__media section__media--secondary">
+                <img src="images/gallery/treatment-massage-800.webp" width="800" height="537" alt="photo d'un soin du visage pour une cliente"
+                 srcset="images/gallery/treatment-massage-600.webp 600w, images/gallery/treatment-massage-800.webp 800w" 
+                sizes="(max-width:95rem) 43vw, 100vw" loading="lazy">
+              </div>
+            </div>
+            <!-- Colonne grande image de façade -->
+            <div class="section__banner">
+              <img src="images/gallery/body-care-1000.webp" width="1000" height="671" alt="photo du cabinet de massage et de relaxation" 
+              srcset="images/gallery/body-care-600.webp 600w, images/gallery/body-care-1000.webp 1000w, images/gallery/body-care-1600.webp 1600w" 
+              sizes="(max-width:95rem) 57vw, 100vw" loading="lazy">
+            </div>
+          </div>
+        </article>
+        <article class="experience__step container container--lg reveal-element">
+          <div class="section__container d-flex">
+            <!-- Colonne texte & petites images -->
+            <div class="section__content-wrapper grid">
+              <div class="section__header section--left-aligned">
+                <p class="section__label">LE MAQUILLAGE</p>
+                <h3 class="section__title section__title--compact">Maquillage & sublimation</h3>
+                <p class="section__content section__content--narrow">Un maquillage sur mesure, du naturel lumineux à l'élégance des grands soirs, réalisé avec des produits haut de gamme.</p>
+              </div>
+              <div class="section__media section__media--primary section__media--focus-right">
+                <!-- <img src="images/gallery/makeup.png" alt=""> -->
+                 <img src="images/gallery/wedding-makeup-800.webp" width="800" height="537" alt="photo du resultat d'un maquillage pour mariee"
+                 srcset="images/gallery/wedding-makeup-600.webp 600w, images/gallery/wedding-makeup-800.webp 800w" 
+                sizes="(max-width:95rem) 43vw, 100vw" loading="lazy">
+              </div>
+              <div class="section__media section__media--secondary">
+                <!-- <img src="images/gallery/result-makeup.png" alt="" srcset=""> -->
+                 <img src="images/gallery/black-smokey-makeup-800.webp" width="800" height="537" alt="photo du resultat d'un maquillage noir smokey de ceremonie " 
+                 srcset="images/gallery/black-smokey-makeup-600.webp 600w, images/gallery/black-smokey-makeup-800.webp 800w" 
+                sizes="(max-width:95rem) 43vw, 100vw" loading="lazy">
+              </div>
+            </div>
+            <!-- Colonne grande image de façade -->
+            <div class="section__banner">
+              <img src="images/gallery/space-makeup-1000.webp" width="1000" height="671" alt="photo de l'espace maquillage" 
+              srcset="images/gallery/space-makeup-600.webp 600w, images/gallery/space-makeup-1000.webp 1000w, images/gallery/space-makeup-1600.webp 1600w" 
+              sizes="(max-width:95rem) 57vw, 100vw" loading="lazy">
+            </div>
+          </div>
+        </article>
+        <article class="experience__step container container--lg reveal-element">
+          <div class="section__container d-flex">
+            <!-- Colonne texte & petites images -->
+            <div class="section__content-wrapper grid">
+              <div class="section__header section--left-aligned">
+                <p class="section__label">MAINS & PIEDS</p>
+                <h3 class="section__title section__title--compact">Beauté des mains & des pieds</h3>
+                <p class="section__content section__content--narrow">Manucure et pédicure dans un cadre d'exception, pour des mains et des pieds impeccables jusqu'au moindre détail.</p>
+              </div>
+              <div class="section__media section__media--primary">
+                <img src="images/gallery/pedicure-treatment-800.webp" width="800" height="537" alt="photo d'une employee faisant un pedicure"
+                srcset="images/gallery/pedicure-treatment-600.webp 600w, images/gallery/pedicure-treatment-800.webp 800w" 
+                sizes="(max-width:95rem) 43vw, 100vw" loading="lazy">
+              </div>
+              <div class="section__media section__media--secondary">
+                <img src="images/gallery/manucure-rose-pastel-800.webp" width="800" height="537" alt="resultat d'une manucure rose pastel"
+                srcset="images/gallery/manucure-rose-pastel-600.webp 600w, images/gallery/manucure-rose-pastel-800.webp 800w" 
+                sizes="(max-width:95rem) 43vw, 100vw" loading="lazy">
+              </div>
+            </div>
+            <!-- Colonne grande image de façade -->
+            <div class="section__banner">
+              <img src="images/gallery/manucure-treatment-1000.webp" width="1000" height="671" alt="photo d'une employee faisant un traitement mancuure" 
+              srcset="images/gallery/manucure-treatment-600.webp 600w, images/gallery/manucure-treatment-1000.webp 1000w, images/gallery/manucure-treatment-1600.webp 1600w" 
+              sizes="(max-width:95rem) 57vw, 100vw" loading="lazy">
+            </div>
+          </div>
+        </article>
+        <article class="experience__step container container--lg reveal-element">
+          <div class="section__container d-flex">
+            <!-- Colonne texte & petites images -->
+            <div class="section__content-wrapper grid">
+              <div class="section__header section--left-aligned">
+                <p class="section__label">LE RÉSULTAT</p>
+                <h3 class="section__title section__title--compact">La révélation</h3>
+                <p class="section__content section__content--narrow">Un résultat naturel, lumineux et durable, à la hauteur de votre beauté.</p>
+              </div>
+              <div class="section__media section__media--primary">
+                <img src="images/gallery/result-hair-800.webp" width="800" height="537" alt="photo resultat coiffure d'une cliente"
+                srcset="images/gallery/result-hair-600.webp 600w, images/gallery/result-hair-800.webp 800w" 
+                sizes="(max-width:95rem) 43vw, 100vw" loading="lazy">
+              </div>
+              <div class="section__media section__media--secondary">
+                <img src="images/gallery/result-makeup-800.webp" width="800" height="537" alt="photo resultat maquillage d'une cliente"
+                srcset="images/gallery/result-makeup-600.webp 600w, images/gallery/result-makeup-800.webp 800w" 
+                sizes="(max-width:95rem) 43vw, 100vw" loading="lazy">
+              </div>
+            </div>
+            <!-- Colonne grande image de façade -->
+            <div class="section__banner">
+              <img src="images/gallery/result-skincare-1000.webp" width="1000" height="671" alt="photo resultat soin du visage d'une cliente"
+              srcset="images/gallery/result-skincare-600.webp 600w, images/gallery/result-skincare-1000.webp 1000w, images/gallery/result-skincare-1600.webp 1600w" 
+              sizes="(max-width:95rem) 57vw, 100vw" loading="lazy">
+            </div>
+          </div>
+        </article>
+        <div class="section__btns-action container container--lg">
+          <a class="btn btn--icon btn--light" data-target="contact" href="booking.html">
+          <span class="btn__text">Prendre rendez-vous</span>
+          <span class="btn__icon">
+            <svg viewBox="0 -960 960 960">
+          <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+            </svg>
+          </span>
+          </a>
+        </div>
+        
+       
+      </section>
+
+       <!-- section footer -->
+      <footer class="section footer">
+        <div class="container">
+          <!-- Bloc principal avec colonnes -->
+          <div class="footer__top">
+            <div class="footer__brand">
+              <a href="/" class="footer__logo"><img src="images/logo/logo-mira.svg" width="602" height="171" alt="Logo Maison MIRA" loading="lazy"/></a>
+              <p class="footer__tagline">"Votre maison de beauté à Oran"</p>
+            </div>
+            <nav class="footer__nav">
+              <h3 class="footer__heading">Navigation</h3>
+              <ul class="footer__nav-list">
+                <li class="footer__nav-item"><a href="index.html" class="footer__nav-link" data-nav-link>Acceuil</a></li>
+                <li class="footer__nav-item"><a href="services.html" class="footer__nav-link">Prestations</a></li>
+                <li class="footer__nav-item"><a href="formations.html" class="footer__nav-link">Formation</a></li>
+                <li class="footer__nav-item"><a href="gallery.html" class="footer__nav-link">Gallery</a></li>
+                <li class="footer__nav-item"><a href="booking.html" class="footer__nav-link">nous contacter</a></li>
+                <!-- <li><a href="" class="btn navmenu__btn">prendre rendez-vous</a></li> -->
+              </ul>
+            </nav>
+            <div class="footer__contact">
+              <h3 class="footer__heading">Contact</h3>
+              <address class="footer__address"> 
+                <a href="tel:+213 41 531 532" class="footer__contact-link">+213 41 531 532</a>
+                <a href="mailto:contact@mira.dz" class="footer__contact-link">contact@mira.dz</a>
+                <span>15 Rue de la Beauté</span>
+              </address>
+            </div>
+            <div class="footer__social">
+              <h3 class="footer__heading">Suivez-nous</h3>
+              <ul class="footer__social-list">
+                <li><a href="#" class="footer__social-link">Instagram</a></li>
+                <li><a href="#" class="footer__social-link">Facebook</a></li>
+                <li><a href="#" class="footer__social-link">TikTok</a></li>
+              </ul>
+              
+            </div>
+          </div>
+          <hr>
+          <!-- Barre de copyright -->
+          <div class="footer__bottom">
+            <p class="footer__copyright">© 2026 Maison MIRA. Tous droits réservés.</p>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/observer.js" defer></script>
+    <script src="scripts/active-state.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Comprendre preventDetail, stopPropagation & les événements JavaScript</title>
+    <style>
+        :root {
+            --primary: #1e293b;
+            --accent: #3b82f6;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #334155;
+            --code-bg: #0f172a;
+            --code-text: #e2e8f0;
+            --border-color: #cbd5e1;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 40px;
+        }
+        .container {
+            max-width: 900px;
+            background: var(--card-bg);
+            margin: 0 auto;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.05);
+            border-top: 6px solid var(--accent);
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 24px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-top: 0;
+        }
+        h2 {
+            color: var(--accent);
+            font-size: 18px;
+            margin-top: 35px;
+            border-left: 4px solid var(--accent);
+            padding-left: 10px;
+        }
+        p, li {
+            font-size: 14px;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        code {
+            background-color: #f1f5f9;
+            color: #db2777;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 13px;
+        }
+        pre {
+            background-color: var(--code-bg);
+            color: var(--code-text);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 13px;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Comprendre preventDefault, stopPropagation & les événements JavaScript</h1>
+
+    <p>Oui — et c’est un concept très important en JavaScript côté navigateur. Le point subtil est qu’un événement comme <code>click</code> ne représente pas seulement « exécute mon code ». Le navigateur a aussi ses propres actions associées à cet événement.</p>
+
+    <h2>1. Un clic déclenche plusieurs mécanismes</h2>
+    <p>Prenons :</p>
+    <pre>&lt;a href="#contact" class="btn"&gt;Me contacter&lt;/a&gt;</pre>
+    <p>Quand tu cliques dessus, il faut imaginer quelque chose comme :</p>
+    <pre>Utilisateur clique
+       ↓
+Le navigateur crée un événement "click"
+       ↓
+Les gestionnaires JavaScript sont appelés
+       ↓
+Le navigateur regarde si l'action par défaut doit être effectuée
+       ↓
+Si oui → navigation vers #contact</pre>
+    <p>Ton code est donc une partie du traitement du clic, mais il n'est pas forcément le traitement complet.</p>
+
+    <h2>2. <code>preventDefault()</code> agit sur une autre chose</h2>
+    <p>Regarde :</p>
+    <pre>heroActions.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    console.log("Bonjour");
+});</pre>
+    <p><code>preventDefault()</code> signifie :</p>
+    <p><em>« Pour cet événement, n'effectue pas l'action par défaut associée à l'élément. »</em></p>
+    <p>Il ne signifie absolument pas :</p>
+    <p><em>« Arrête le JavaScript ici. »</em></p>
+    <p>C'est une distinction fondamentale.</p>
+    <p>Par exemple :</p>
+    <pre>e.preventDefault();
+
+console.log("A");
+console.log("B");
+console.log("C");</pre>
+    <p>affichera bien :</p>
+    <pre>A
+B
+C</pre>
+    <p>Donc <code>preventDefault()</code> n'arrête pas l'exécution du programme.</p>
+
+    <h2>3. <code>preventDefault()</code> ≠ <code>return</code></h2>
+    <p>C'est là que ça devient intéressant.</p>
+    <p>Tu pourrais penser :</p>
+    <pre>e.preventDefault();</pre>
+    <p>veut dire :</p>
+    <pre>return;</pre>
+    <p>Mais non.</p>
+    <p>Ils ont des rôles complètement différents.</p>
+
+    <p><strong>return</strong></p>
+    <pre>console.log("A");
+
+return;
+
+console.log("B");</pre>
+    <p>Résultat :</p>
+    <pre>A</pre>
+    <p>Parce que <code>return</code> quitte la fonction.</p>
+
+    <p><strong>preventDefault()</strong></p>
+    <pre>e.preventDefault();
+
+console.log("A");
+console.log("B");</pre>
+    <p>Résultat :</p>
+    <pre>A
+B</pre>
+    <p>Parce que <code>preventDefault()</code> n'arrête pas la fonction.</p>
+    <p>Il dit seulement au navigateur :</p>
+    <p><em>« N'exécute pas le comportement par défaut de cet événement. »</em></p>
+
+    <h2>4. Dans ton exemple, qui fait quoi ?</h2>
+    <p>Ton HTML pourrait être :</p>
+    <pre>&lt;div class="header__hero-actions"&gt;
+    &lt;a href="#about" class="btn"&gt;À propos&lt;/a&gt;
+    &lt;a href="#contact" class="btn"&gt;Contact&lt;/a&gt;
+&lt;/div&gt;</pre>
+    <p>Et ton JavaScript :</p>
+    <pre>heroActions.addEventListener("click", (e) => {
+
+    const btn = e.target.closest(".btn");
+
+    if (!btn) return;
+
+    const targetHref = btn.getAttribute("href");
+
+    if (!targetHref || !targetHref.startsWith("#")) return;
+
+    e.preventDefault();
+
+    const section = document.querySelector(targetHref);
+
+    if (!section) return;
+
+    section.scrollIntoView({
+        behavior: "smooth"
+    });
+});</pre>
+    <p>Lorsqu'on clique sur :</p>
+    <pre>&lt;a href="#contact" class="btn"&gt;</pre>
+    <p>il y a deux acteurs :</p>
+
+    <p><strong>Acteur 1 : ton JavaScript</strong></p>
+    <p>Il dit :</p>
+    <pre>section.scrollIntoView({
+    behavior: "smooth"
+});</pre>
+    <p>→ <em>« Fais défiler la page doucement. »</em></p>
+
+    <p><strong>Acteur 2 : le navigateur</strong></p>
+    <p>Il voit :</p>
+    <pre>href="#contact"</pre>
+    <p>et son comportement naturel est :<br>→ <em>« Ah, un lien vers <code>#contact</code>. Je vais naviguer vers cette ancre. »</em></p>
+    <p>Tu ne veux pas que <strong>les deux</strong> travaillent.</p>
+    <p>Tu veux :</p>
+    <p>JavaScript → scroll fluide</p>
+    <p>et pas :</p>
+    <p>JavaScript → scroll fluide<br>+<br>Navigateur → navigation normale vers #contact</p>
+    <p>C'est exactement le rôle de :</p>
+    <pre>e.preventDefault();</pre>
+
+    <h2>5. Pourquoi le navigateur fait-il ça après ton code ?</h2>
+    <p>C'est une bonne question.</p>
+    <p>Ton gestionnaire :</p>
+    <pre>heroActions.addEventListener("click", callback);</pre>
+    <p>ne remplace pas le comportement natif du navigateur.</p>
+    <p>Il <strong>s'ajoute</strong> au système d'événements.</p>
+    <p>Tu peux imaginer :</p>
+    <pre>             CLICK
+               │
+       ┌───────┴────────┐
+       ↓                ↓
+Ton JavaScript     comportement
+                   par défaut
+       │                │
+       ↓                ↓
+scrollIntoView()    href="#contact"</pre>
+    <p>Avec :</p>
+    <pre>e.preventDefault();</pre>
+    <p>tu désactives la branche de droite :</p>
+    <pre>             CLICK
+               │
+       ┌───────┴────────┐
+       ↓                ↓
+Ton JavaScript     comportement
+       │              par défaut
+       ↓                X
+scrollIntoView()</pre>
+
+    <h2>6. Et ça ne concerne pas seulement les liens</h2>
+    <p>C'est là que le concept devient vraiment utile.</p>
+
+    <p><strong>&lt;a&gt;</strong></p>
+    <pre>&lt;a href="https://example.com"&gt;Clique&lt;/a&gt;</pre>
+    <p>Comportement par défaut :<br>→ naviguer vers l'URL.</p>
+    <p>Tu peux faire :</p>
+    <pre>link.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    console.log("Je décide moi-même quoi faire");
+});</pre>
+    <p>Le navigateur ne naviguera pas.</p>
+
+    <p><strong>&lt;form&gt;</strong></p>
+    <p>Autre exemple extrêmement important :</p>
+    <pre>&lt;form&gt;
+    &lt;input type="text"&gt;
+    &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
+&lt;/form&gt;</pre>
+    <p>Quand tu soumets le formulaire, le navigateur a un comportement par défaut : <strong>soumettre le formulaire</strong>, généralement avec une navigation/requête.</p>
+    <p>Tu peux intercepter ça :</p>
+    <pre>form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    console.log("Je vais traiter le formulaire avec JavaScript");
+});</pre>
+    <p>C'est extrêmement courant avec les applications modernes.</p>
+    <p>Par exemple :</p>
+    <pre>form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    // envoyer les données avec fetch()
+});</pre>
+    <p>Tu remplaces le comportement natif du formulaire par ton propre comportement.</p>
+
+    <h2>7. Un autre concept important : <code>stopPropagation()</code></h2>
+    <p>Et là, beaucoup de débutants confondent les deux.</p>
+    <p>Tu as :</p>
+    <pre>e.preventDefault();</pre>
+    <p>et :</p>
+    <pre>e.stopPropagation();</pre>
+    <p>Ils n'ont <strong>pas du tout</strong> le même rôle.</p>
+
+    <p><strong>preventDefault()</strong></p>
+    <p><em>« Empêche l'action par défaut. »</em></p>
+
+    <p><strong>stopPropagation()</strong></p>
+    <p><em>« Empêche l'événement de continuer à se propager dans le DOM. »</em></p>
+
+    <p>Exemple :</p>
+    <pre>&lt;div id="parent"&gt;
+    &lt;button id="child"&gt;Clique&lt;/button&gt;
+&lt;/div&gt;</pre>
+    <p>Avec :</p>
+    <pre>parent.addEventListener("click", () => {
+    console.log("parent");
+});
+
+child.addEventListener("click", (e) => {
+    console.log("child");
+});</pre>
+    <p>Quand tu cliques sur le bouton, tu peux avoir :</p>
+    <pre>child
+parent</pre>
+    <p>Pourquoi ?</p>
+    <p>Parce que le clic sur <code>button</code> remonte dans l'arbre DOM.</p>
+    <p>C'est ce qu'on appelle la <strong>propagation de l'événement</strong> (event bubbling).</p>
+    <p>Si tu fais :</p>
+    <pre>child.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    console.log("child");
+});</pre>
+    <p>alors :</p>
+    <pre>child</pre>
+    <p>et le parent ne reçoit pas cet événement par propagation.</p>
+    <p>Mais attention :</p>
+    <pre>e.stopPropagation();</pre>
+    <p>n'empêche pas <strong>le comportement par défaut</strong> du bouton/lien.</p>
+    <p>C'est justement pour ça qu'il faut bien retenir :</p>
+    <pre>preventDefault()
+    ↓
+empêche l'action native
+
+stopPropagation()
+    ↓
+empêche la propagation de l'événement</pre>
+
+    <h2>8. Et ton code utilise justement un autre concept très intéressant</h2>
+    <p>Tu as :</p>
+    <pre>heroActions.addEventListener("click", (e) => {</pre>
+    <p>alors que les boutons sont probablement <strong>à l'intérieur</strong> de <code>.header__hero-actions</code>.</p>
+    <p>Tu n'as pas mis :</p>
+    <pre>btn.addEventListener("click", ...)</pre>
+    <p>sur chaque bouton.</p>
+    <p>Tu écoutes le clic sur le parent.</p>
+    <p>C'est ce qu'on appelle la <strong>délégation d'événement</strong> (event delegation).</p>
+    <p>Imaginons :</p>
+    <pre>&lt;div class="header__hero-actions"&gt;
+
+    &lt;a class="btn" href="#about"&gt;About&lt;/a&gt;
+
+    &lt;a class="btn" href="#contact"&gt;Contact&lt;/a&gt;
+
+    &lt;a class="btn" href="#projects"&gt;Projects&lt;/a&gt;
+
+&lt;/div&gt;</pre>
+    <p>Tu pourrais faire :</p>
+    <pre>document.querySelectorAll(".btn").forEach(btn => {
+    btn.addEventListener("click", ...);
+});</pre>
+    <p>Mais ton code fait plus intelligemment :</p>
+    <pre>heroActions.addEventListener("click", (e) => {
+
+    const btn = e.target.closest(".btn");
+
+    if (!btn) return;
+
+    // ...
+});</pre>
+    <p>Le clic arrive sur le bouton, <strong>remonte vers le parent</strong>, et le parent décide :</p>
+    <p><em>« Est-ce que l'élément qui a été cliqué correspond à <code>.btn</code> ? »</em></p>
+    <p>C'est très puissant lorsqu'on a beaucoup d'éléments dynamiques.</p>
+
+    <h2>9. <code>e.target</code> et <code>e.currentTarget</code></h2>
+    <p>Et ton code permet aussi de comprendre une autre notion essentielle.</p>
+    <p>Tu as :</p>
+    <pre>e.target</pre>
+    <p>et :</p>
+    <pre>e.currentTarget</pre>
+    <p>Ils sont différents.</p>
+    <p>Supposons :</p>
+    <pre>&lt;div class="actions"&gt;
+    &lt;button class="btn"&gt;
+        &lt;span&gt;Contact&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;</pre>
+    <p>Tu cliques précisément sur :</p>
+    <pre>&lt;span&gt;Contact&lt;/span&gt;</pre>
+    <p>Alors :</p>
+    <pre>e.target</pre>
+    <p>peut être :</p>
+    <pre>&lt;span&gt;Contact&lt;/span&gt;</pre>
+    <p>Parce que c'est <strong>l'élément réellement cliqué</strong>.</p>
+    <p>Mais :</p>
+    <pre>e.currentTarget</pre>
+    <p>sera :</p>
+    <pre>&lt;div class="actions"&gt;</pre>
+    <p>Parce que c'est <strong>l'élément sur lequel ton <code>addEventListener</code> est attaché</strong>.</p>
+    <p>Donc :</p>
+    <pre>e.target
+    ↓
+qui a réellement reçu le clic ?
+
+e.currentTarget
+    ↓
+qui écoute l'événement ?</pre>
+    <p>Et c'est précisément pour ça que :</p>
+    <pre>e.target.closest(".btn")</pre>
+    <p>est utile dans ton code.</p>
+
+    <h2>10. Le modèle mental à retenir</h2>
+    <p>Quand tu travailles avec les événements DOM, pose-toi toujours <strong>trois questions</strong> :</p>
+
+    <p><strong>① Quel événement ?</strong></p>
+    <ul>
+        <li><code>click</code></li>
+        <li><code>submit</code></li>
+        <li><code>keydown</code></li>
+        <li><code>input</code></li>
+        <li><code>change</code></li>
+        <li>...</li>
+    </ul>
+
+    <p><strong>② Quel est le comportement par défaut du navigateur ?</strong></p>
+    <p>Par exemple :</p>
+    <p><code>&lt;a href="..."&gt;</code> → navigation.</p>
+    <p><code>&lt;form&gt;</code> → soumission.</p>
+
+    <p><strong>③ Est-ce que je veux laisser le navigateur faire ce comportement ?</strong></p>
+    <p>Si <strong>non</strong> :</p>
+    <pre>e.preventDefault();</pre>
+    <p>Et pour la propagation, demande-toi séparément :</p>
+    <p><em>« Est-ce que je veux que cet événement continue à remonter/descendre dans le DOM ? »</em></p>
+    <p>Si non :</p>
+    <pre>e.stopPropagation();</pre>
+
+    <p><strong>Une phrase qui résume tout</strong></p>
+    <p><code>preventDefault()</code> ne contrôle pas l'ordre d'exécution de ton JavaScript. Il contrôle ce que le navigateur fait naturellement en réponse à l'événement.</p>
+    <p>C'est une distinction qui devient fondamentale dès que tu commences à faire des interfaces interactives avec les événements DOM.</p>
+
+</div>
+
+</body>
+</html>

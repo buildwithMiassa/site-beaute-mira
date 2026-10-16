@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Réservez votre moment de beauté et vos rituels de soin à la Maison MIRA à Oran. Choisissez votre prestation en ligne et confirmez votre rendez-vous."
+    />
+
+    <!-- <link rel="preload" href="images/booking/bg-booking-900.webp" as="image" type="image/webp" media="(max-width: 47.5em)" fetchpriority="high"> -->
+
+    <link
+      rel="preload"
+      href="images/booking/bg-booking-900.webp"
+      as="image"
+      media="(max-width: 47.5em)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="images/booking/bg-booking-2048.webp"
+      as="image"
+      media="(min-width: 47.5em) and (max-width: 64.5em)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="images/booking/bg-booking-1920.webp"
+      as="image"
+      media="(min-width: 64.5em)"
+      fetchpriority="high"
+    />
+
+    <link rel="stylesheet" href="styles/bundle-main.min.css" />
+    <link rel="stylesheet" href="styles/index.min.css" />
+    <link rel="stylesheet" href="styles/booking.min.css" />
+
+    <!-- flaticons -->
+    <link rel="shortcut icon" href="images/salon.png" type="image/x-icon" />
+    <title>Réservation — Maison MIRA</title>
+  </head>
+  <body>
+    <header class="header header--minimal">
+      <!-- top bar -->
+      <div class="header__before-navbar">
+        <address class="header__contact">
+          <svg
+            class="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#f1e7d0"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-phone-call preview-icon"
+          >
+            <path d="M13 2a9 9 0 0 1 9 9" />
+            <path d="M13 6a5 5 0 0 1 5 5" />
+            <path
+              d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+            />
+          </svg>
+          <span class="header__contact-label">Nous appelez : </span>
+          <a href="tel:+213 41 531 532" class="header__contact-value"
+            >+213 41 531 532</a
+          >
+        </address>
+        <div class="header__hours">
+          <svg
+            class="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#f1e7d0"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-clock-8 preview-icon"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 6v6l-4 2" />
+          </svg>
+          <span class="header__contact-label">Jours d'ouverture :</span>
+          <span class="header__hours-value">samedi - vendredi, 08h - 21h</span>
+        </div>
+      </div>
+      <!-- navbar -->
+      <div class="header__navbar">
+        <a href="/" class="header__logo"
+          ><img
+            src="images/logo/logo-mira-black.svg"
+            width="602"
+            height="171"
+            alt="Logo Maison MIRA"
+        /></a>
+        <nav id="main-menu" class="header__navmenu">
+          <ul class="navmenu__list">
+            <li class="navmenu__item">
+              <a href="index.html" class="navmenu__link" data-nav-link
+                >Acceuil</a
+              >
+            </li>
+            <li class="navmenu__item">
+              <a href="services.html" class="navmenu__link" data-nav-link
+                >Prestations</a
+              >
+            </li>
+            <li class="navmenu__item">
+              <a href="formations.html" class="navmenu__link" data-nav-link
+                >Formation</a
+              >
+            </li>
+            <li class="navmenu__item">
+              <a href="gallery.html" class="navmenu__link" data-nav-link
+                >Gallery</a
+              >
+            </li>
+            <li class="navmenu__item">
+              <a href="booking.html" class="navmenu__link" data-nav-link
+                >nous contacter</a
+              >
+            </li>
+            <!-- <li><a href="" class="btn navmenu__btn">prendre rendez-vous</a></li> -->
+          </ul>
+        </nav>
+        <button
+          class="hamburger humburger--dark"
+          aria-label="toggle menu"
+          aria-expanded="false"
+          aria-controls="main-menu"
+        >
+          <svg
+            class="openIcon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="1" />
+            <circle cx="12" cy="19" r="1" />
+            <circle cx="12" cy="5" r="1" />
+          </svg>
+          <svg
+            class="closeIcon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main>
+      <!-- section Nous contacter -->
+      <section
+        id="contact"
+        class="section section--on-dark section-custom section-custom--image d-flex align-center justify-center contact"
+      >
+        <div
+          class="container container--tight d-flex align-center justify-center"
+        >
+          <div class="contact__wrapper">
+            <!-- Colonne gauche -->
+            <div class="section__header">
+              <!-- <p class="contact__label">Notre expertise</p> -->
+              <h1 class="section__title section__title--sm">
+                Réservez <br />votre moment de beauté
+              </h1>
+              <p class="section__content">
+                Nous vous confirmons par téléphone sous 24h
+              </p>
+            </div>
+
+            <!-- Colonne droite -->
+            <form action="" method="post" class="contact__form">
+              <div class="contact__field-container">
+                <div class="contact__field">
+                  <label class="contact__label-field" for="contact-lastname"
+                    >Nom :</label
+                  >
+                  <input
+                    class="contact__input"
+                    id="contact-lastname"
+                    name="userlastname"
+                    autocomplete="family-name"
+                    type="text"
+                  />
+                  <p class="contact__error" id="contact-lastname-error"></p>
+                </div>
+                <div class="contact__field">
+                  <label class="contact__label-field" for="contact-firstname"
+                    >Prénom:</label
+                  >
+                  <input
+                    class="contact__input"
+                    id="contact-firstname"
+                    name="userfirstname"
+                    autocomplete="given-name"
+                    type="text"
+                  />
+                  <p class="contact__error" id="contact-firstname-error"></p>
+                </div>
+              </div>
+              <div class="contact__field-container">
+                <div class="contact__field">
+                  <label class="contact__label-field" for="contact-phone"
+                    >Numéro de téléphone <br /><small class="contact__hint"
+                      >*Utilisé uniquement pour confirmer votre
+                      rendez-vous</small
+                    >
+                  </label>
+                  <input
+                    class="contact__input"
+                    type="tel"
+                    name="userphone"
+                    autocomplete="tel"
+                    id="contact-phone"
+                  />
+                  <p class="contact__error" id="contact-phone-error"></p>
+                </div>
+                <div class="contact__field">
+                  <label class="contact__label-field" for="contact-email"
+                    >Email : <br /><small class="contact__hint"></small
+                  ></label>
+                  <input
+                    class="contact__input"
+                    id="contact-email"
+                    name="useremail"
+                    autocomplete="email"
+                    type="email"
+                  />
+                  <p class="contact__error" id="contact-email-error"></p>
+                </div>
+              </div>
+              <div class="contact__field">
+                <label class="contact__label-field" for="contact-service"
+                  >Choisir une prestation :</label
+                >
+                <select
+                  class="contact__input"
+                  name="contact__select"
+                  id="contact-service"
+                >
+                  <option value="" selected disabled>
+                    Choisir une prestation...
+                  </option>
+                  <optgroup label="Rituels Capillaires" data-category="hair">
+                    <option value="" disabled>✦ Coupe & Coiffage</option>
+                    <option value="signature_haircut">Coupe signature</option>
+                    <option value="signature_haircut_home">
+                      Coupe signature à domicile / hôtel
+                    </option>
+
+                    <option value="signature_blowdry_short">
+                      Brushing signature - cheveux courts
+                    </option>
+                    <option value="signature_blowdry_medium">
+                      Brushing signature - Cheveux mi-longs
+                    </option>
+                    <option value="signature_blowdry_long">
+                      Brushing signature - cheveux longs
+                    </option>
+                    <option value="signature_blowdry_home">
+                      Brushing signature à domicile / hôtel
+                    </option>
+
+                    <option value="elegance_updo_short">
+                      Chignon elégance - cheveux courts
+                    </option>
+                    <option value="elegance_updo_medium">
+                      Chignon elégance - cheveux mi-longs
+                    </option>
+                    <option value="elegance_updo_long">
+                      Chignon elégance - cheveux longs
+                    </option>
+                    <option value="elegance_updo_home">
+                      Chignon elégance à domicile / hôtel
+                    </option>
+
+                    <option value="" disabled>✦ Rituels de Soin</option>
+                    <option value="tokio_inkarami_short">
+                      Rituel Tokio Inkarami (60 min) - Cheveux courts
+                    </option>
+                    <option value="tokio_inkarami_medium">
+                      Rituel Tokio Inkarami (60 min) - Cheveux mi-longs
+                    </option>
+                    <option value="tokio_inkarami_long">
+                      Rituel Tokio Inkarami (60 min) - Cheveux longs
+                    </option>
+
+                    <option value="keratin_ritual_short">
+                      Rituel kératine - cheveux courts
+                    </option>
+                    <option value="keratin_ritual_medium">
+                      Rituel kératine - cheveux mi-longs
+                    </option>
+                    <option value="keratin_ritual_long">
+                      Rituel kératine - cheveux longs
+                    </option>
+
+                    <option value="brazilian_straightening_short">
+                      Lissage brésilien premium - cheveux courts
+                    </option>
+                    <option value="brazilian_straightening_medium">
+                      Lissage brésilien premium - cheveux mi-longs
+                    </option>
+                    <option value="brazilian_straightening_long">
+                      Lissage brésilien premium - cheveux longs
+                    </option>
+
+                    <option value="" disabled>
+                      ✦ Bien-être du Cuir Chevelu
+                    </option>
+                    <option value="scalp_massage">
+                      Massage du cuir chevelu
+                    </option>
+                    <option value="hot_oil_ritual_30">
+                      Rituel à l'Huile chaude (30 min)
+                    </option>
+                    <option value="hot_oil_ritual_60">
+                      Rituel à l'Huile chaude (60 min)
+                    </option>
+
+                    <option value="" disabled>✦ Coloration & Éclat</option>
+                    <option value="signature_coloring">
+                      Coloration signature
+                    </option>
+                    <option value="natural_coloring">
+                      Coloration végétale
+                    </option>
+
+                    <option value="balayage_short">
+                      Balayage signature - cheveux courts
+                    </option>
+                    <option value="balayage_medium">
+                      Balayage signature - cheveux mi-longs
+                    </option>
+                    <option value="balayage_long">
+                      Balayage signature - cheveux longs
+                    </option>
+
+                    <option value="hair_gloss">Patine • toner • gloss</option>
+                    <option value="root_touch_up">Retouche racines</option>
+                    <option value="bleach_correction">
+                      Correction de décoloration
+                    </option>
+                  </optgroup>
+                  <optgroup
+                    label="Rituels Beauté du Visage"
+                    data-category="face"
+                  >
+                    <option value="" disabled>✦ Soin visage</option>
+                    <option value="luxury_facial_treatment">
+                      Soin visage signature luxe
+                    </option>
+                    <option value="deep_cleansing_facial">
+                      Soin visage nettoyage profond
+                    </option>
+                    <option value="anti_aging_facial">
+                      Soin visage anti-age
+                    </option>
+                    <option value="hydrating_facial">
+                      Soin visage hydratant
+                    </option>
+                    <option value="brightening_facial">
+                      Soin visage eclat & lumière
+                    </option>
+                    <option value="premium_lifting_facial">
+                      Soin visage liftant premium
+                    </option>
+                    <option value="" disabled>✦ Soins Regard</option>
+                    <option value="eyelash_extension">
+                      Extensions de cils
+                    </option>
+                    <option value="lash_lift">Rehaussement de cils</option>
+                    <option value="eyebrow_design">
+                      Restructuration des sourcils
+                    </option>
+                    <option value="eyebrow_tinting">
+                      Teinture des sourcils
+                    </option>
+                    <option value="" disabled>✦ Maquillage</option>
+                    <option value="luxury_makeup">Maquillage luxe</option>
+                    <option value="bridal_makeup">Maquillage mariée</option>
+                    <option value="evening_makeup">Maquillage soirée</option>
+                    <option value="makeup_lesson">
+                      Cours de maquillage privé
+                    </option>
+                  </optgroup>
+                  <optgroup
+                    label="Rituels Corps & Bien-être"
+                    data-category="wellness"
+                  >
+                    <option value="" disabled>✦Soins du Corps</option>
+                    <option value="luxury_body_scrub">
+                      Gommage corporel sublime
+                    </option>
+                    <option value="hydrating_body_wrap">
+                      Enveloppement corporel intense
+                    </option>
+                    <option value="detox_body_wrap">
+                      Enveloppement détoxifiant
+                    </option>
+                    <option value="body_polishing_treatment">
+                      Soin eclat & polissage
+                    </option>
+                    <option value="firming_body_treatment">
+                      Soin fermeté repulpant
+                    </option>
+                    <option value="slimming_body_treatment">
+                      Soin silhouette ciblé
+                    </option>
+                    <option value="" disabled>✦ Massages & Bien-être</option>
+                    <option value="signature_relaxation_massage">
+                      Massage détente absolue
+                    </option>
+                    <option value="deep_tissue_massage">
+                      Massage tissu profond
+                    </option>
+                    <option value="hot_stone_massage">
+                      Massage aux pierres chaudes
+                    </option>
+                    <option value="aromatherapy_massage">
+                      Massage aromatique
+                    </option>
+                    <option value="balinese_massage">Massage balinais</option>
+                  </optgroup>
+                  <optgroup
+                    label="Beauté des mains & des pieds"
+                    data-category="hand-feet"
+                  >
+                    <option value="luxury_manicure">Manucure prestige</option>
+                    <option value="spa_manicure">Manucure spa</option>
+                    <option value="gel_polish_manicure">
+                      Manucure vernis semi-permanent
+                    </option>
+                    <option value="luxury_pedicure">Pédicure prestige</option>
+                    <option value="spa_pedicure">Pédicure spa</option>
+                  </optgroup>
+                </select>
+              </div>
+              <div class="contact__field-container">
+                <div class="contact__field">
+                  <label class="contact__label-field" for="contact-date"
+                    >La date :</label
+                  >
+                  <input
+                    class="contact__input"
+                    type="date"
+                    name="userdate"
+                    id="contact-date"
+                  />
+                  <p class="contact__error" id="contact-date-error"></p>
+                </div>
+                <div class="contact__field">
+                  <label class="contact__label-field" for="contact-time"
+                    >L'heure :</label
+                  >
+                  <input
+                    class="contact__input"
+                    type="time"
+                    name="usertime"
+                    id="contact-time"
+                    min="08:30"
+                    max="17:00"
+                    step="1800"
+                  />
+                  <p class="contact__error" id="contact-time-error"></p>
+                </div>
+              </div>
+
+              <div class="contact__field">
+                <label class="contact__label-field" for="contact-message"
+                  >Précisions concernant votre rendez-vous (optionnel) :</label
+                >
+                <textarea
+                  class="contact__input"
+                  name="usermessage"
+                  autocomplete=""
+                  id="contact-message"
+                  rows="6"
+                  placeholder="Allergies, préférences, informations utiles concernant votre rendez-vous..."
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn--submit">envoyer</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <h2 class="sr-only">Informations complémentaires et navigation</h2>
+      <footer class="section footer">
+        <div class="container">
+          <!-- Bloc principal avec colonnes -->
+          <div class="footer__top">
+            <div class="footer__brand">
+              <a href="/" class="footer__logo"
+                ><img
+                  src="images/logo/logo-mira.svg"
+                  width="602"
+                  height="171"
+                  alt="Logo Maison MIRA"
+              /></a>
+              <p class="footer__tagline">"Votre maison de beauté à Oran"</p>
+            </div>
+            <nav class="footer__nav">
+              <h3 class="footer__heading">Navigation</h3>
+              <ul class="footer__nav-list">
+                <li class="footer__nav-item">
+                  <a href="index.html" class="footer__nav-link" data-nav-link>Acceuil</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="services.html" class="footer__nav-link">Prestations</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="formations.html" class="footer__nav-link">Formation</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="gallery.html" class="footer__nav-link">Gallery</a>
+                </li>
+                <li class="footer__nav-item">
+                  <a href="booking.html" class="footer__nav-link">nous contacter</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="footer__contact">
+              <h3 class="footer__heading">Contact</h3>
+              <address class="footer__address">
+                <a href="tel:+213 41 531 532" class="footer__contact-link"
+                  >+213 41 531 532</a
+                >
+                <a href="mailto:contact@mira.dz" class="footer__contact-link"
+                  >contact@mira.dz</a
+                >
+                <span>15 Rue de la Beauté</span>
+              </address>
+            </div>
+            <div class="footer__social">
+              <h3 class="footer__heading">Suivez-nous</h3>
+              <ul class="footer__social-list">
+                <li><a href="#" class="footer__social-link">Instagram</a></li>
+                <li><a href="#" class="footer__social-link">Facebook</a></li>
+                <li><a href="#" class="footer__social-link">TikTok</a></li>
+              </ul>
+            </div>
+          </div>
+          <hr />
+          <!-- Barre de copyright -->
+          <div class="footer__bottom">
+            <p class="footer__copyright">
+              © 2026 Maison MIRA. Tous droits réservés.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/booking.js"></script>
+    <script src="scripts/active-state.js"></script>
+  </body>
+</html>

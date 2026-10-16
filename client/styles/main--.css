@@ -1,0 +1,491 @@
+:root {
+  /* ========================================================
+                         TYPOGRAPHY
+  ========================================================*/
+  /* Font Families */
+  --ff-body: "Playfair Display";
+  --ff-heading:
+    "Cormorant Garamond", "Playfair Display", ui-serif, Georgia, serif;
+  /* ou bien --ff-price */
+  --ff-didone: "Didot", "Bodoni MT", "Times New Roman", serif;
+
+  /* Font Weights */
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* ======== Font size ======== */
+  /* --step--1: clamp(0.80rem, 0.75rem + 0.25vw, 0.90rem);
+  --step-0:  clamp(1.00rem, 0.90rem + 0.50vw, 1.25rem);
+  --step-1:  clamp(1.25rem, 1.10rem + 0.75vw, 1.56rem);
+  --step-2:  clamp(1.56rem, 1.35rem + 1.00vw, 1.95rem);
+  --step-3:  clamp(1.95rem, 1.65rem + 1.50vw, 2.44rem);
+  --step-4:  clamp(2.44rem, 2.00rem + 2.00vw, 3.05rem);
+  --step-5:  clamp(3.05rem, 2.40rem + 3.00vw, 3.81rem);
+  --step-6:  clamp(3.81rem, 2.90rem + 4.50vw, 4.77rem);
+  --step-7: clamp(4.77rem, 3.50rem + 6.00vw, 5.96rem);
+  --step-8: clamp(5.96rem, 4.25rem + 8.00vw, 7.45rem);
+  --step-9: clamp(7.45rem, 5.20rem + 10.00vw, 9.31rem);
+  --step-10: clamp(9.31rem, 6.50rem + 12.00vw, 11.64rem); */
+
+  --step--2: clamp(0.64rem, 0.5971rem + 0.1905vw, 0.72rem);
+  --step--1: clamp(0.8rem, 0.7464rem + 0.2381vw, 0.9rem);
+  --step-0: clamp(1rem, 0.933rem + 0.2976vw, 1.125rem);
+  --step-1: clamp(1.25rem, 1.1663rem + 0.372vw, 1.4063rem);
+  --step-2: clamp(1.5625rem, 1.4579rem + 0.465vw, 1.7578rem);
+  --step-3: clamp(1.9531rem, 1.8223rem + 0.5813vw, 2.1973rem);
+  --step-4: clamp(2.4414rem, 2.2779rem + 0.7266vw, 2.7466rem);
+  --step-5: clamp(3.0518rem, 2.8474rem + 0.9083vw, 3.4332rem);
+  --step-6: clamp(3.8147rem, 3.5592rem + 1.1353vw, 4.2915rem);
+
+  /* --step--2: clamp(0.64rem, 0.5954rem + 0.1981vw, 0.7232rem);
+  --step--1: clamp(0.8rem, 0.7443rem + 0.2476vw, 0.904rem);
+  --step-0: clamp(1rem, 0.9304rem + 0.3095vw, 1.13rem);
+  --step-1: clamp(1.25rem, 1.1629rem + 0.3869vw, 1.4125rem);
+  --step-2: clamp(1.5625rem, 1.4537rem + 0.4836vw, 1.7656rem);
+  --step-3: clamp(1.9531rem, 1.8171rem + 0.6045vw, 2.207rem);
+  --step-4: clamp(2.4414rem, 2.2714rem + 0.7557vw, 2.7588rem);
+  --step-5: clamp(3.0518rem, 2.8392rem + 0.9446vw, 3.4485rem);
+  --step-6: clamp(3.8147rem, 3.549rem + 1.1807vw, 4.3106rem); */
+
+  /* Component-specific overrides (hors échelle Major Third) */
+  --font-size-hero-primary: clamp(6rem, 2.9786rem + 13.4286vw, 11.64rem);
+  --font-size-hero-secondary: clamp(2.5rem, 1.2839rem + 5.4048vw, 4.77rem);
+  --font-size-section-title: clamp(2.125rem, 1.4219rem + 3.125vw, 3.4375rem);
+  --font-size-step-title: clamp(1.9375rem, 1.3683rem + 2.5298vw, 3rem);
+  --font-size-confirmation-title: clamp(1.375rem, 1.2rem + 0.9vw, 1.75rem);
+  --fs-helper: 0.7rem;
+
+  /* ======== Text width ======== */
+  /* --text-narrow: 35ch;   
+  --text-medium: 50ch;   
+  --text-wide: 65ch;      */
+
+  --text-narrow: 35ch;
+  /* hero */
+  --text-small: 45ch;
+  /* textes intermédiaires */
+  --text-medium: 50ch;
+  /* sections */
+  --text-large: 55ch;
+  /* textes larges */
+  --text-wide: 65ch;
+  /* contenu long */
+  /* ==========================================================
+                        TEXT WIDTH
+  ========================================================== */
+  --measure-sm: 35ch;
+  --measure-md: 45ch;
+  --measure-lg: 50ch;
+  --measure-xl: 65ch;
+  /* ==========================================================
+                        LINE HEIGHT
+  ========================================================== */
+  --lh-tight: 1.1;
+  --lh-heading: 1.3;
+  --lh-body: 1.5;
+  --lh-loose: 1.7;
+
+  /* ==========================================================
+                        LETTER SPACING
+  ========================================================== */
+  --tracking-tighter: -0.03em;
+  --tracking-tight: -0.015em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-wider: 0.08em;
+  --tracking-widest: 0.15em;
+  --tracking-extra: 0.2em;
+
+  /* ==========================================================
+                       SPACING SCALE
+  ========================================================== */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 2.5rem;
+  --space-8: 3rem;
+  --space-9: 4rem;
+  --space-10: 6rem;
+  --space-11: 8rem;
+  --space-12: 10rem;
+  --space-13: 12rem;
+  --space-14: 14rem;
+  --space-15: 16rem;
+
+  /* ==========================================================
+                          BUTTONS
+  ========================================================== */
+  --button-padding-sm: 0.4rem 0.8rem;
+  --button-padding-md: 0.6rem 1.2rem;
+  --button-padding-lg: 0.8rem 1.6rem;
+
+  /* ==========================================================
+                          SIZING
+  ========================================================== */
+  --logo-sm: clamp(3.5rem, 2.5vw, 6.5rem);
+  --logo-lg: clamp(3rem, 2vw, 5rem);
+  --hint-height: 1rem;
+
+  /* ==========================================================
+                      BORDER RADIUS
+  ========================================================== */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* ==================================================
+                    COLOR PALETTE
+   ================================================== */
+  /* Brand */
+  --color-brand-300: hsla(41, 24%, 62%, 0.77);
+  --color-brand-400: hsl(41, 24%, 62%);
+
+  /* Neutral */
+  --color-neutral-0: hsl(0, 0%, 100%);
+  --color-neutral-50: hsl(36 29% 97%);
+  --color-neutral-100: hsl(0 0% 91%);
+  --color-neutral-300: hsl(0 0% 80%);
+  --color-neutral-500: hsl(0 0% 44%);
+  --color-neutral-700: hsl(210 9% 31%);
+  --color-neutral-900: hsl(0 0% 14%);
+  --color-neutral-950: hsl(0 0% 12% / 85%);
+  --color-neutral-1000: hsl(0 0% 0%);
+
+  /* Feedback */
+  --color-success: hsl(145, 63%, 49%);
+  --color-warning: hsl(37, 90%, 51%);
+  --color-error: hsl(6, 63%, 46%);
+  --color-info: hsl(204, 70%, 53%);
+
+  /* Utility */
+  --color-transparent: transparent;
+
+  /* ==================================================
+                  SEMANTIC TOKENS
+    ================================================== */
+  /* Text */
+  --color-text: var(--color-neutral-900);
+  --color-text-muted: var(--color-neutral-500);
+  --color-text-inverse: var(--color-neutral-0);
+
+  /* Backgrounds / Surfaces */
+  --color-surface: var(--color-neutral-0);
+  --color-surface-alt: var(--color-neutral-50);
+
+  /* Borders */
+  --color-border: var(--color-neutral-300);
+  --color-border-muted: var(--color-neutral-900);
+
+  /* Brand */
+  --color-accent: var(--color-brand-400);
+  --color-accent-muted: var(--color-brand-300);
+
+  /* Overlay */
+  --color-overlay: var(--color-neutral-950);
+
+  /* =========================================================
+                          SHADOWS
+  ======================================================== */
+  --shadow-xs: 0 0 7px rgb(0 0 0 / 15%);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 0 30px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 25px 70px rgba(181, 154, 120, 0.2);
+  --shadow-text: 0 2px 10px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 15px -1px hsl(0, 0%, 96%);
+  --shadow-glass: 0 20px 60px rgba(0, 0, 0, 0.2);
+
+  /* =========================================================
+    LAYERS
+  =========================================================*/
+  --z-background: 0;
+  --z-base: 1;
+  --z-content: 2;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 500;
+  --z-modal: 1000;
+  --z-tooltip: 1100;
+}
+
+/* ============= RESET ============= */
+/* ================================= */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: var(--step-0);
+  font-family: var(--ff-body);
+  font-weight: var(--font-regular);
+  line-height: var(--lh-body);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  inline-size: 100%;
+  block-size: inherit;
+  /* height: 100%; */
+  object-fit: cover;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+select {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+h1 {
+  font-family: var(--ff-heading);
+  font-size: var(--step-6);
+  line-height: var(--lh-tight);
+  /* text-align: center; */
+  letter-spacing: var(--tracking-wide);
+}
+
+h2 {
+  --section-title-tracking: var(--tracking-wide);
+  font-family: var(--ff-heading);
+  font-size: var(--step-5);
+  /* font-weight: var(--font-medium); */
+  line-height: var(--lh-heading);
+  letter-spacing: var(--lt-sp);
+}
+
+h3 {
+  --section-title-tracking: var(--tracking-wide);
+  font-family: var(--ff-heading);
+  font-size: var(--step-3);
+  /* font-weight: var(--font-medium); */
+  line-height: var(--lh-heading);
+  letter-spacing: var(--section-title-tracking);
+}
+
+hr {
+  width: 40%;
+  margin-inline: auto;
+  border: none;
+  border-top: 1px solid var(--color-neutral-100);
+}
+
+p {
+  /* color: var(--color-neutral-700); */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: var(--lh-loose);
+}
+
+address {
+  font-style: normal;
+}
+
+/*==== UTILITIES CLASSES ====*/
+.d-flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+/* --- Justify Content --- */
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+/* --- Align Items --- */
+.align-start {
+  align-items: flex-start;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+/* --- Wrap --- */
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.gap-2 {
+  gap: 3em;
+}
+
+.pd-block {
+  padding-block: clamp(1rem, 0.866rem + 0.6699999999999999vw, 1.67rem);
+}
+
+/* .pd-inline{
+  padding-inline: clamp(1rem, 0.866rem + 0.6699999999999999vw, 1.67rem);;
+} */
+.grid {
+  display: grid;
+}
+
+.text-align-ctr {
+  text-align: center;
+}
+
+.text-transform-cap {
+  text-transform: capitalize;
+}
+
+.display-none {
+  display: none;
+}
+
+.display-block {
+  display: block;
+}
+
+/* ======== Mobile Device ======== */
+/* =============================== */
+
+/* ==========================================
+   COMPOSANT GLOBAL : Section Label (Overline)
+   ========================================== */
+.section__label {
+  position: relative;
+  font-size: var(--step--1);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: hsl(37, 45%, 58%);
+  padding-inline-start: 4.375rem;
+  margin-block-end: var(--space-2);
+}
+
+.section__label::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 4rem;
+  height: 1px;
+  background-color: hsl(37, 45%, 58%);
+}
+
+/* Variante de label */
+.section__label--sm {
+  font-size: var(--step--2);
+}
+
+/* Modificateur pour les titres centrés (avec ou sans double trait) */
+.section__label--centered {
+  width: fit-content;
+  margin-inline: auto;
+}
+
+/* Modificateur court pour ajouter le deuxième trait à droite (ex: pour les titres centrés) */
+.section__label--lines {
+  padding-inline-end: 4.375rem;
+}
+
+.section__label--lines::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 4rem;
+  height: 1px;
+  transform: translateY(-50%);
+  background-color: hsl(37, 45%, 58%);
+}
+
+/* ======== Tablet screen Medium ========= */
+@media screen and (min-width: 48em) {
+  .flex-md-row {
+    flex-direction: row;
+  }
+
+  .flex-md-col {
+    flex-direction: column;
+  }
+
+  /*==== Container Grid ====*/
+  .container-row {
+    grid-template-rows: auto auto 80vh;
+  }
+}
+
+/* ======== Large screen ========= */
+/* “à partir de quelle largeur mon layout 2 colonnes est confortable” */
+@media screen and (min-width: 64.5em) {
+  .flex-lg-row {
+    flex-direction: row;
+  }
+
+  .flex-lg-col {
+    flex-direction: column;
+  }
+
+  h1 {
+    letter-spacing: var(--tracking-wider);
+  }
+}
+
+/* ======== Extra Large screen ========= */
+@media screen and (min-width: 120em) {
+  /*==== Container Grid ====*/
+  /* .container {
+    grid-template-columns: minmax(2rem, 1fr) minmax(0, 85rem) minmax(2rem, 1fr);
+  } */
+}
+

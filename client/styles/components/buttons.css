@@ -1,0 +1,118 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--button-padding-sm);
+  font-size: .95rem;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  white-space: nowrap;
+  background-color: var(--bg, var(--color-accent));
+  outline: none;
+  border-radius: var(--radius-sm);
+  color: var(--fg, var(--color-neutral-0));
+  box-shadow: 0px 0px 25px -1px var(--color-accent);
+  border: 2px solid var(--color-transparent);
+  outline: none;
+  cursor: pointer;
+  transition: background-color 500ms ease-in, color 500ms ease-in, border-color 500ms ease-in, box-shadow 500ms ease-in;
+}
+.btn:is(:hover, :focus) {
+  --bg: var(--color-transparent);
+  border: 1px solid hsl(0, 0%, 96%);
+  box-shadow: var(--shadow-glow);
+}
+/* .btn--light:is(:hover, :focus){
+  --fg: var(--color-neutral-900);
+  border-color: hsl(37, 45%, 58%);
+} */
+/* btn en flex pour contenu interne */
+/* display: flex → élément de type block-level */
+/* ======== hero section ======= */
+/* ================================= */
+.btn--icon {
+  display: inline-grid;
+  grid-template-columns:  1fr 2rem;
+}
+.btn__icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn__icon svg{
+  width: 1.1rem;
+  height: auto;
+  fill: currentColor;
+  transition: transform 500ms ease-in;
+}
+.btn:hover .btn__icon svg {
+  transform: translateX(20%);
+}
+
+/* ======== Services section ======= */
+/* ================================= */
+.btn--card{
+  text-transform: capitalize;
+  align-self: flex-end;
+  margin-block-start: var(--space-4);
+  gap: unset;
+}
+
+/* ======== Contact section ======= */
+/* ================================ */
+.btn--submit{
+  display: block;
+  margin-inline: auto;
+}
+.btn--submit:is(:hover, :focus) {
+  border: 2px solid var(--color-accent);
+  box-shadow: 0px 0px 15px -1px var(--color-accent);
+  background-color: var(--color-transparent);
+  color: var(--color-neutral-700);
+}
+
+/* ======== services page ======= */
+/* ================================ */
+.btn--filter{
+  background-color: var(--color-transparent);
+  color: inherit;
+  border: 1px solid var(--color-border);
+  box-shadow:  var(--shadow-xs);
+}
+.btn.btn--filter:is(:hover,:focus){
+  border-color: var(--color-border-muted);
+}
+
+/* ======== training page ======= */
+/* ================================ */
+.btn--non-border{
+  --bg: none;
+  --fg: var(--color-text);
+  font-size: var(--step--1);
+  border: none;
+  box-shadow: none;
+  padding: unset;
+}
+.btn.btn--non-border:is(:hover, :focus) {
+    border: unset;
+    color: var(--color-accent);
+  }
+
+/* ======== Tablet screen ========= */
+@media screen and (min-width: 48em) {
+   .btn{
+    font-size: inherit;
+    padding: var(--button-padding-md);
+    letter-spacing: var(--tracking-wider);
+    gap: var(--space-3);
+  }
+}
+
+@media screen and (min-width: 64.5em){
+  .btn{
+    font-size: .95rem;
+    letter-spacing: var(--tracking-widest);
+  }
+  
+  
+}
